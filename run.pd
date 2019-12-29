@@ -1,0 +1,2 @@
+#N canvas 1235 153 521 822 12;
+#X obj 56 15 binauralsynth;
