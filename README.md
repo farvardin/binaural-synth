@@ -66,7 +66,7 @@ THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Credits and Links 
 
-Some code are based on the default Pd sketches (volume output, frequency modulation by wavetable (B05.tabread.FM.pd))
+Some code are based on the default Pd sketches (volume output, frequency modulation by wavetable (B05.tabread.FM.pd), moog filter (bob~))
 
 Some open source alternatives:
 
