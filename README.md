@@ -10,6 +10,11 @@ Some believe it might help focusing, or induce meditative states. We won't discu
 
 Binaural Beats are fun! They can create hypnotic drones or high frequencies madness! So let's create some with this simple synth.
 
+## How does it sound like? 
+
+ * https://clyp.it/ufkzshog
+ * https://clyp.it/b4evitno
+
 ## Usage 
 
 It works with:
@@ -30,6 +35,10 @@ In addition to the classic, "traditional" Sine wave, you can also add, by increa
  * a white noise
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
+
+You can also send CC message (using knobs on your keyboard, if you have some), to alter some parameters. Edit binauralsynth.pd and change the values of the "ctlin" in the (knobs) subprogram.
+
+You can use the binaural-synth with the pd-pulp VST, but it's not working correctly at the moment (you have to rename the virtual knobs to pdpulp_p1 *_p2... etc and change use a midi keyboard).
 
 ## Licence 
 
