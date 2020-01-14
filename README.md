@@ -38,7 +38,18 @@ If you connect a MIDI keyboard, you should be able to play the frequencies with 
 
 You can also send CC message (using knobs on your keyboard, if you have some), to alter some parameters. Edit binauralsynth.pd and change the values of the "ctlin" in the (knobs) subprogram.
 
+### VST 
+
 You can use the binaural-synth with the pd-pulp VST, but it's not working correctly at the moment (you have to rename the virtual knobs to pdpulp_p1 *_p2... etc and change use a midi keyboard).
+
+### Android and iOS 
+
+ * There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty](http://www.droidparty.net/) app. It should also work with [PdParty on iOS](https://github.com/danomatika/PdParty).
+Just load the binaural.dpz file found in the release tab.
+
+![](binaural_screenshot_android.jpg)
+
+ * There is also a mobmuplat.mmp file which you can use with [MobMuPlat](http://danieliglesia.com/mobmuplat/) (Mobile Music Platform). This template is not much developped, but it can be used as a basis. You can load this file along the Pd files on your smartphone.
 
 ## Licence 
 
