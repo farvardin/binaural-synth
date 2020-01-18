@@ -1,4 +1,4 @@
-#N canvas 110 167 981 890 12;
+#N canvas 111 121 1148 936 12;
 #N canvas 730 108 648 541 sequence 0;
 #X floatatom 283 73 8 0 0 0 - - -, f 8;
 #X msg 38 209 300;
@@ -174,21 +174,21 @@ bang is clicked);
 #X connect 4 0 0 0;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 667 409 pd volume noise;
-#N canvas 997 374 450 369 variate 0;
+#N canvas 871 185 913 693 variate 0;
 #X msg 156 41 bang;
 #X obj 144 96 metro;
 #X floatatom 223 93 5 0 0 0 - - -, f 5;
 #X obj 268 15 loadbang;
 #X msg 272 44 500;
-#X obj 111 231 s Beat_Frequency_knob;
-#X obj 65 298 r Beat_Frequency_value;
+#X obj 81 357 s Beat_Frequency_knob;
+#X obj 48 407 r Beat_Frequency_value;
 #X obj 92 181 + 2;
 #X msg 342 57 200;
 #X obj 224 149 random 400;
 #X obj 347 117 + 200;
 #X obj 38 135 random 20;
 #X msg 208 19 stop;
-#N canvas 1155 138 450 323 randomize 0;
+#N canvas 1364 158 450 369 randomize 0;
 #X obj 85 18 inlet;
 #X obj 94 210 outlet;
 #X obj 179 58 metro;
@@ -206,8 +206,8 @@ bang is clicked);
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
 #X restore 435 372 pd randomize;
-#X msg 440 325 bang;
-#X obj 429 436 s FM_Freq_knob;
+#X msg 423 218 bang;
+#X obj 394 545 s FM_Freq_knob;
 #N canvas 1155 138 450 323 randomize 0;
 #X obj 85 18 inlet;
 #X obj 94 210 outlet;
@@ -225,34 +225,62 @@ bang is clicked);
 #X connect 5 0 4 0;
 #X connect 6 0 1 0;
 #X connect 7 0 6 0;
-#X restore 520 241 pd randomize;
-#X msg 497 185 bang;
-#X obj 519 323 s noise_cutoff_knob;
-#X obj 532 288 s noise_resonance_knob;
+#X restore 505 252 pd randomize;
+#X obj 651 425 s noise_cutoff_knob;
+#X obj 705 303 s noise_resonance_knob;
 #X msg 393 327 stop;
-#X msg 584 193 stop;
-#X obj 596 158 r random;
+#X msg 585 192 stop;
+#X obj 458 135 r random;
+#X obj 417 180 spigot;
+#X obj 427 84 metro;
+#X obj 506 24 loadbang;
+#X msg 510 53 500;
+#X obj 357 268 print;
+#X obj 425 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 499 433 r random;
+#X obj 460 464 spigot;
+#X obj 745 237 r random;
+#X obj 706 268 spigot;
+#X obj 686 336 r random;
+#X obj 647 367 spigot;
+#X obj 223 264 r random;
+#X obj 184 295 spigot;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 0 11 0;
 #X connect 2 0 1 1;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
-#X connect 7 0 5 0;
+#X connect 7 0 35 0;
 #X connect 8 0 2 0;
 #X connect 9 0 10 0;
 #X connect 10 0 2 0;
 #X connect 11 0 7 0;
 #X connect 12 0 1 0;
-#X connect 13 0 15 0;
+#X connect 13 0 29 0;
 #X connect 14 0 13 0;
-#X connect 16 0 18 0;
-#X connect 16 0 19 0;
-#X connect 17 0 16 0;
-#X connect 20 0 13 0;
-#X connect 21 0 16 0;
-#X connect 22 0 17 0;
+#X connect 14 0 16 0;
+#X connect 14 0 0 0;
+#X connect 16 0 31 0;
+#X connect 16 0 33 0;
+#X connect 19 0 13 0;
+#X connect 20 0 16 0;
+#X connect 21 0 22 1;
 #X connect 22 0 14 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 0;
+#X connect 24 0 23 0;
+#X connect 25 0 23 1;
+#X connect 27 0 23 0;
+#X connect 28 0 29 1;
+#X connect 29 0 15 0;
+#X connect 30 0 31 1;
+#X connect 31 0 18 0;
+#X connect 32 0 33 1;
+#X connect 33 0 17 0;
+#X connect 34 0 35 1;
+#X connect 35 0 5 0;
 #X restore 664 121 pd variate;
 #X obj 735 247 binauralsynth;
 #X obj 656 58 cnv 15 197 36 empty empty BinauralSynth 24 15 0 18 -163127
@@ -294,49 +322,49 @@ bang is clicked);
 #X obj -1 0 cnv 16 550 280 empty empty empty 20 12 0 14 -262065 -66577
 0;
 #X obj 59 70 vsl 20 100 0 440 0 1 Main_Frequency_knob yellow-vsl empty
-0 -9 0 10 -262114 -1 -1 2700 1;
+0 -9 0 10 -262114 -1 -1 3150 1;
 #X obj 204 71 vsl 20 100 0 64 0 1 Beat_Frequency_knob green-vsl empty
-0 -9 0 10 -204786 -1 -1 700 1;
+0 -9 0 10 -204786 -1 -1 550 1;
 #X obj 187 41 nbx 5 20 -1e+37 1e+37 0 1 Beat_Frequency_final Beat_Frequency_knob
-empty 0 -8 0 10 -204786 -1 -1 4.52525 256 0;
+empty 0 -8 0 10 -204786 -1 -1 3.55556 256 0;
 #X text 254 41 Hz;
 #X text 106 42 Hz;
 #X text 207 197 FM mod freq:;
 #X obj 37 42 nbx 5 20 -1e+37 1e+37 0 1 Main_Frequency Main_Frequency_knob
-empty 0 -8 0 10 -262130 -1 -1 120 256 0;
+empty 0 -8 0 10 -262130 -1 -1 140 256 0;
 #X text 200 228 FM mod depth:;
 #X obj 428 230 nbx 5 20 -1e+37 1e+37 0 1 FM_mod_depth FM_mod_depth_knob
-empty 0 -8 0 10 -262144 -1 -1 75.1515 256 0;
+empty 0 -8 0 10 -262144 -1 -1 46.6667 256 0;
 #X text 14 14 Carrier Frequency;
 #X text 166 14 Beat Frequency;
 #X text 380 61 Sine Volume;
-#X obj 365 91 hsl 100 20 0 120 0 1 sine_volume_knob empty empty -2
--8 0 10 -228856 -1 -1 6800 1;
-#X obj 365 140 hsl 100 20 0 120 0 1 FM_volume_knob empty empty -2 -8
-0 10 -228856 -1 -1 3300 1;
+#X obj 365 91 hsl 100 20 0 100 0 1 sine_volume_knob empty empty -2
+-8 0 10 -228856 -1 -1 6600 1;
+#X obj 365 140 hsl 100 20 0 100 0 1 FM_volume_knob empty empty -2 -8
+0 10 -228856 -1 -1 2750 1;
 #X text 378 118 FM Volume;
 #X obj 307 230 hsl 100 20 0 120 0 1 FM_mod_depth_knob empty empty -2
--8 0 10 -228856 -1 -1 6200 1;
+-8 0 10 -228856 -1 -1 3850 1;
 #X obj 428 194 nbx 5 20 -1e+37 1e+37 0 1 FM_Freq FM_Freq_knob empty
-0 -8 0 10 -262144 -1 -1 51.5152 256 0;
+0 -8 0 10 -262144 -1 -1 40.9091 256 0;
 #X obj 307 194 hsl 100 20 0 300 0 1 FM_Freq_knob empty empty -2 -8
-0 10 -228856 -1 -1 1700 1;
+0 10 -228856 -1 -1 1350 1;
 #X obj 507 242 bng 30 250 50 0 \$0-nextview1 empty next 4 15 0 10 -245092
 -1 -1;
 #X obj 478 91 nbx 4 20 -1e+37 1e+37 0 1 empty sine_volume_knob empty
-0 -8 0 10 -167479 -1 -1 82.4242 256 0;
+0 -8 0 10 -167479 -1 -1 66.6667 256 0;
 #X obj 478 140 nbx 4 20 -1e+37 1e+37 0 1 empty FM_volume_knob empty
-0 -8 0 10 -167479 -1 -1 40 256 0;
-#X obj 34 230 hsl 100 20 0 120 0 1 master_volume_knob empty empty -2
--8 0 10 -228856 -1 -1 7800 1;
+0 -8 0 10 -167479 -1 -1 27.7778 256 0;
+#X obj 34 230 hsl 100 20 0 110 0 1 master_volume_knob empty empty -2
+-8 0 10 -228856 -1 -1 7650 1;
 #X text 16 194 Main Volume;
 #X obj 111 194 nbx 4 20 -1e+37 1e+37 0 1 empty master_volume_knob empty
-0 -8 0 10 -167479 -1 -1 94.5455 256 0;
+0 -8 0 10 -167479 -1 -1 85 256 0;
 #X obj -1 280 cnv 16 550 280 empty empty empty 20 12 0 14 -262057 -66577
 0;
 #X obj 507 522 bng 30 250 50 0 \$0-nextview2 empty next 4 15 0 10 -245092
 -1 -1;
-#X obj 289 533 hsl 100 20 0 120 0 0 noise_volume_knob empty empty -2
+#X obj 289 533 hsl 100 20 0 60 0 0 noise_volume_knob empty empty -2
 -8 0 10 -228856 -1 -1 0 1;
 #X text 303 506 Noise Volume;
 #X obj 815 158 image garvalf.png 0;
@@ -397,18 +425,18 @@ empty 0 -8 0 10 -167479 -1 -1 50.9091 256 0;
 #X text 363 462 resonance;
 #X text 441 462 panning fx;
 #X text 288 462 cut off;
-#X obj 36 347 hsl 100 20 0 120 0 1 phasor_volume_knob empty empty -2
+#X obj 36 347 hsl 100 20 0 100 0 1 phasor_volume_knob empty empty -2
 -8 0 10 -228856 -1 -1 0 1;
 #X obj 150 347 nbx 4 20 -1e+37 1e+37 0 0 empty phasor_volume_knob empty
 0 -8 0 10 -167479 -1 -1 0 256 0;
-#X obj 36 407 hsl 100 20 0 120 0 1 square_volume_knob empty empty -2
+#X obj 36 407 hsl 100 20 0 100 0 1 square_volume_knob empty empty -2
 -8 0 10 -228856 -1 -1 0 1;
 #X obj 150 407 nbx 4 20 -1e+37 1e+37 0 0 empty square_volume_knob empty
 0 -8 0 10 -167479 -1 -1 0 256 0;
 #X text 50 320 Phasor Volume;
 #X text 50 380 Square Volume;
-#X obj 35 466 hsl 50 20 1 9 0 0 square_pwm_knob empty empty -2 -8 0
-10 -228856 -1 -1 0 1;
+#X obj 35 466 hsl 50 20 1 50 0 0 square_pwm_knob empty empty -2 -8
+0 10 -228856 -1 -1 0 1;
 #X obj 96 466 nbx 4 20 1 99 0 1 empty square_pwm empty 0 -8 0 10 -167479
 -1 -1 25 256 0;
 #X text 49 439 Square PWM;
@@ -458,3 +486,26 @@ empty 0 -8 0 10 -167479 -1 -1 50.9091 256 0;
 10 -245092 -1 -1;
 #X obj 376 596 bng 40 250 50 0 key-octave-4 empty oct-4 3 20 0 12 -262130
 -1 -1;
+#N canvas 1316 426 509 502 Visu 0;
+#X obj 54 14 r~ toPlot;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array signal 1000 float 0 black black;
+#X coords 0 1 999 -1 200 140 1;
+#X restore 98 92 graph;
+#X obj 60 279 tabwrite~ signal;
+#X obj 306 80 tgl 15 0 empty empty ON 2 8 0 10 -262144 -1 -1 0 1;
+#X obj 336 242 metro 100;
+#X obj 307 110 vu 10 120 empty empty -1 -8 0 10 -66577 -1 0 0;
+#X obj 269 30 env~;
+#X obj 333 58 - 102;
+#X obj 320 388 s~ toPlot;
+#X obj 300 350 r~ OUT_left;
+#X connect 0 0 2 0;
+#X connect 0 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 9 0 8 0;
+#X coords 0 -1 1 1 250 180 1 82 64;
+#X restore 622 664 pd Visu;
