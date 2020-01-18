@@ -24,4 +24,5 @@ readme:
 	
 
 droidparty:
+	-rm -i ../binaural.dpz
 	cd .. ; zip -r binaural.dpz binaural
