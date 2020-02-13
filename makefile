@@ -1,7 +1,8 @@
 
 
 SKETCH=binauralsynth
-EDITOR=purr-data
+#EDITOR=purr-data
+EDITOR=puredata
 
 
 backup:
