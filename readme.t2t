@@ -11,7 +11,7 @@ Some believe it might help focusing, or induce meditative states. We won't discu
 Binaural Beats are fun! They can create hypnotic drones or high frequencies madness! So let's create some with this simple synth.
 
 
-== How does it sound like? ==
+== What does it sound like? ==
 
 - https://clyp.it/ufkzshog
 - https://clyp.it/b4evitno
@@ -21,10 +21,14 @@ Binaural Beats are fun! They can create hypnotic drones or high frequencies madn
 
 It works with:
 - [Pure Data (Pd) vanilla https://puredata.info] 
-- [Purr Data https://agraef.github.io/purr-data/] (a fork based on [Pd-L2Ork http://l2ork.music.vt.edu/main/make-your-own-l2ork/software/], which is itself based on the now obsolete Pd Extended.
+- [Purr Data https://agraef.github.io/purr-data/] (a fork based on [Pd-L2Ork http://l2ork.music.vt.edu/main/make-your-own-l2ork/software/]), which is itself based on the now obsolete Pd Extended.
 
 
-Just start Pd or Purr-Data, and load the run.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
+Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
+
+- droidparty_main.pd is the interface, with some presets and demo sequences
+- binauralsynth.pd is the engine itself
+- you can find an example of a full "song" in the demos/sable folder
 
 
  [binaural_screenshot.png]
@@ -34,8 +38,9 @@ You can change the base frequency (called carrier frequency), and the beat frequ
 
 
 In addition to the classic, "traditional" Sine wave, you can also add, by increasing their volume:
-- a FM sound, driven by a few parameters (including the modulation frequency, mod depth, and FM wave).
-- a phaser (sawtooth wave) sound (no parameter yet)
+- a FM generator, driven by a few parameters (including the modulation frequency, mod depth, and FM wave).
+- a phaser (sawtooth wave) generator 
+- a square generator
 - a white noise
 
 
