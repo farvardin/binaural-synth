@@ -17,7 +17,7 @@ edit:
 
 
 run:
-	${EDITOR} droidparty_main.pd
+	${EDITOR} binauralsynth.pd
 
 
 readme:
