@@ -42,6 +42,7 @@ In addition to the classic, "traditional" Sine wave, you can also add, by increa
 - a phaser (sawtooth wave) generator 
 - a square generator
 - a white noise
+- a drum beat (kick)
 
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
@@ -58,7 +59,7 @@ You can use the binaural-synth with the pd-pulp VST, but it's not working correc
 
 
 - There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty  http://www.droidparty.net/] app. It should also work with [PdParty on iOS https://github.com/danomatika/PdParty].
-Just load the binaural.dpz file found in the release tab.
+Just load the binaural.zip file found in the release tab.
 
 [binaural_screenshot_android.jpg]
 

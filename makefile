@@ -20,10 +20,23 @@ run:
 	${EDITOR} binauralsynth.pd
 
 
+droidparty:
+	${EDITOR} droidparty_main.pd
+
+
 readme:
 	txt2tags -t md -o README.md readme.t2t
 	
 
-droidparty:
-	-rm -i ../binaural.dpz
-	cd .. ; zip -r binaural.dpz binaural
+droidparty-make:
+	-rm -fr /tmp/binaural
+	mkdir -p /tmp/binaural
+	cp *.pd /tmp/binaural
+	cp *.txt /tmp/binaural
+	cp *.png /tmp/binaural
+	cp -fr svg/* /tmp/binaural
+	cp -fr *.ttf /tmp/binaural
+	cp -fr *.mmp /tmp/binaural
+	cd /tmp ; zip -r binaural.pdz binaural
+	cd -
+	cp /tmp/binaural.pdz ./binaural.zip
