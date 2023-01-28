@@ -26,9 +26,10 @@ It works with:
 
 Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
 
-- droidparty_main.pd is the interface, with some presets and demo sequences
+- droidparty_main.pd is the interface, with some presets 
+- extra.pd has some demo sequences and extra engines
 - binauralsynth.pd is the engine itself
-- you can find an example of a full "song" in the demos/sable folder
+- you can find an example of a full "song" in the demos/sable folder (sable_test.pd is newer and reuses the synth instead of copying it in its patch, but this version sounds less good at the moment)
 
 
  [binaural_screenshot.png]
