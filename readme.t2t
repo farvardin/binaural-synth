@@ -59,8 +59,8 @@ You can use the binaural-synth with the pd-pulp VST, but it's not working correc
 === Android and iOS ===
 
 
-- There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty  http://www.droidparty.net/] app. It should also work with [PdParty on iOS https://github.com/danomatika/PdParty].
-Just load the binaural.zip file found in the release tab.
+- There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty  http://droidparty.net/] app. It should also work with [PdParty on iOS https://github.com/danomatika/PdParty].
+Just get the binaural.zip file found in the release tab, and read the instructions there: https://droidparty.net/documentation  (it might be difficult because of the new google restrictions on the media)
 
 [binaural_screenshot_android.jpg]
 

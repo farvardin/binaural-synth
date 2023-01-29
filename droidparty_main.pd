@@ -1,5 +1,411 @@
-#N canvas 29 51 1102 679 12;
-#N canvas 985 86 965 747 presets 1;
+#N canvas 39 98 1697 859 12;
+#N canvas 1009 134 603 417 volume 0;
+#X obj 121 161 / 127;
+#X obj 121 188 pack 0 50;
+#X obj 137 231 line;
+#X obj 121 13 loadbang;
+#X msg 121 59 100;
+#X obj 121 298 s sine_volume;
+#X obj 347 105 r sine_volume_knob;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 140 40 1 100 100;
+#X restore 667 295 pd volume sine;
+#N canvas 105 366 415 411 volume 0;
+#X obj 115 163 / 127;
+#X obj 121 188 pack 0 50;
+#X obj 137 231 line;
+#X obj 121 34 loadbang;
+#X msg 121 59 50;
+#X obj 121 298 s FM_volume;
+#X obj 253 136 r FM_volume_knob;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 0;
+#X coords 0 -1 1 1 140 40 1 100 100;
+#X restore 667 352 pd volume FM;
+#N canvas 599 112 616 414 volume 0;
+#X obj 121 161 / 127;
+#X obj 121 188 pack 0 50;
+#X obj 137 231 line;
+#X obj 121 298 s noise_volume;
+#X obj 278 60 r noise_volume_knob;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X coords 0 -1 1 1 140 40 1 100 100;
+#X restore 667 409 pd volume noise;
+#N canvas 370 169 603 417 volume 0;
+#X obj 121 161 / 127;
+#X obj 121 188 pack 0 50;
+#X obj 137 231 line;
+#X obj 121 13 loadbang;
+#X msg 121 59 100;
+#X obj 347 105 r phasor_volume_knob;
+#X obj 121 298 s phasor_volume;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X coords 0 -1 1 1 140 40 1 100 100;
+#X restore 667 527 pd volume phasor;
+#N canvas 1009 134 709 498 volume 0;
+#X obj 121 161 / 127;
+#X obj 121 188 pack 0 50;
+#X obj 137 231 line;
+#X obj 121 13 loadbang;
+#X msg 121 59 100;
+#X obj 347 105 r square_volume_knob;
+#X obj 121 298 s square_volume;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X coords 0 -1 1 1 140 40 1 100 100;
+#X restore 667 579 pd volume square;
+#X obj 0 0 cnv 15 550 280 empty ViewPort empty 20 12 0 14 #7c7c7c #fcfcfc
+0;
+#X obj 557 0 cnv 16 550 280 empty empty empty 20 12 0 14 #b8dcd8 #404040
+0;
+#X obj 187 41 nbx 5 20 -1e+37 1e+37 0 1 Beat_Frequency_final Beat_Frequency_knob
+empty 0 -8 0 10 #c4fcc4 #000000 #000000 4 256;
+#X text 254 41 Hz;
+#X text 106 42 Hz;
+#X obj 37 42 nbx 5 20 -1e+37 1e+37 0 1 Main_Frequency Main_Frequency_knob
+empty 0 -8 0 10 #fcfcc4 #000000 #000000 110 256;
+#X text 14 14 Carrier Frequency;
+#X text 166 14 Beat Frequency;
+#X obj 347 139 hsl 100 20 0 100 0 1 sine_volume_knob empty empty -2
+-8 0 10 #dcdcdc #000000 #000000 8700 1;
+#X obj 347 188 hsl 100 20 0 100 0 1 FM_volume_knob FM_volume_knob empty
+-2 -8 0 10 #dcdcdc #000000 #000000 4400 1;
+#X text 360 176 FM Volume;
+#X obj 507 242 bng 30 250 50 0 \$0-nextview1 empty next 4 15 0 10 #c4fcfc
+#202020 #000000;
+#X obj 460 151 nbx 4 20 -1e+37 1e+37 0 1 empty sine_volume_knob empty
+0 -8 0 10 #a0e0d8 #000000 #000000 87.8788 256;
+#X obj 460 200 nbx 4 20 -1e+37 1e+37 0 1 empty FM_volume_knob empty
+0 -8 0 10 #a0e0d8 #000000 #000000 44.4444 256;
+#X obj 347 90 hsl 100 20 0 110 0 1 master_volume_knob master_volume-vsl
+empty -2 -8 0 10 #dcdcdc #000000 #000000 8200 1;
+#X text 357 78 Main Volume;
+#X obj 460 102 nbx 4 20 -1e+37 1e+37 0 1 empty master_volume_knob empty
+0 -8 0 10 #a0e0d8 #000000 #000000 75 256;
+#X obj -1 280 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
+0;
+#X obj 507 522 bng 30 250 50 0 \$0-nextview2 empty next 4 15 0 10 #ecd48c
+#000000 #000000;
+#X obj -1 560 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
+0;
+#X obj 17 719 bng 40 250 50 0 key-C empty C 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 79 719 bng 40 250 50 0 key-D empty D 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 96 599 bng 40 250 50 0 key-octave-1 empty oct-1 3 20 0 12 #fcfcc4
+#000000 #000000;
+#X obj 167 599 bng 40 250 50 0 key-octave-2 empty oct-2 3 20 0 12 #fcfcc4
+#000000 #000000;
+#X obj 238 599 bng 40 250 50 0 key-octave-3 empty oct-3 3 20 0 12 #fcfcc4
+#000000 #000000;
+#X obj 140 719 bng 40 250 50 0 key-E empty E 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 48 664 bng 40 250 50 0 key-Cs empty C^ 15 20 0 14 #b8b8b8 #000000
+#000000;
+#X obj 110 664 bng 40 250 50 0 key-Ds empty D^ 15 20 0 14 #b8b8b8 #000000
+#000000;
+#X obj 199 719 bng 40 250 50 0 key-F empty F 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 259 719 bng 40 250 50 0 key-G empty G 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 318 719 bng 40 250 50 0 key-A empty A 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 230 664 bng 40 250 50 0 key-Fs empty F^ 15 20 0 14 #b8b8b8 #000000
+#000000;
+#X obj 292 664 bng 40 250 50 0 key-Gs empty G^ 15 20 0 14 #b8b8b8 #000000
+#000000;
+#X obj 376 719 bng 40 250 50 0 key-B empty B 17 20 0 14 #fcfcfc #000000
+#000000;
+#X obj 350 664 bng 40 250 50 0 key-As empty A^ 15 20 0 14 #b8b8b8 #000000
+#000000;
+#X obj 23 599 bng 40 250 50 0 key-octave-0 empty oct-0 3 20 0 12 #fcfcc4
+#000000 #000000;
+#X obj 472 522 bng 30 250 50 0 \$0-nextview0 empty prev 4 15 0 10 #ecd48c
+#000000 #000000;
+#X obj 25 334 hsl 100 20 0 100 0 1 phasor_volume_knob phasor_volume_knob
+empty -2 -8 0 10 #dcdcdc #000000 #000000 200 1;
+#X obj 139 347 nbx 4 20 -1e+37 1e+37 0 0 empty phasor_volume_knob empty
+0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj 25 394 hsl 100 20 0 100 0 1 square_volume_knob square_volume_knob
+empty -2 -8 0 10 #dcdcdc #000000 #000000 300 1;
+#X obj 139 407 nbx 4 20 -1e+37 1e+37 0 0 empty square_volume_knob empty
+0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X text 33 320 Phasor Volume;
+#X text 33 380 Square Volume;
+#X obj 24 453 hsl 50 20 1 50 0 1 square_pwm_knob empty empty -2 -8
+0 10 #dcdcdc #000000 #000000 3500 1;
+#X obj 85 466 nbx 4 20 1 99 0 1 empty square_pwm empty 0 -8 0 10 #a0e0d8
+#000000 #000000 25 256;
+#X text 32 439 Square PWM;
+#X obj 507 801 bng 30 250 50 0 \$0-nextview3 empty next 4 15 0 10 #ecd48c
+#000000 #000000;
+#X obj -1 841 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
+0;
+#X text 267 854 Presets;
+#X obj 472 801 bng 30 250 50 0 \$0-nextview1 empty prev 4 15 0 10 #ecd48c
+#000000 #000000;
+#X obj 507 1082 bng 30 250 50 0 \$0-nextview4 empty next 4 15 0 10
+#ecd48c #000000 #000000;
+#X obj 472 1082 bng 30 250 50 0 \$0-nextview2 empty prev 4 15 0 10
+#ecd48c #000000 #000000;
+#X text 273 890 Delta Waves (0 Hz to 3.5 Hz);
+#X obj 245 884 bng 20 250 50 0 preset_delta empty empty 17 7 0 10 #3c248c
+#000000 #000000;
+#X text 272 939 Alpha Waves (8 Hz to 12 Hz);
+#X text 273 914 Theta Waves (3.5 Hz to 8 Hz);
+#X text 272 964 Beta Waves (12 Hz to 30 Hz);
+#X text 272 989 Gamma Waves (30 Hz to 100 Hz);
+#X obj 245 909 bng 20 250 50 0 preset_theta empty empty 17 7 0 10 #246c8c
+#000000 #000000;
+#X obj 245 934 bng 20 250 50 0 preset_alpha empty empty 17 7 0 10 #248c50
+#000000 #000000;
+#X obj 245 959 bng 20 250 50 0 preset_beta empty empty 17 7 0 10 #d0900c
+#000000 #000000;
+#X obj 245 984 bng 20 250 50 0 preset_gamma empty empty 17 7 0 10 #b82c10
+#000000 #000000;
+#X obj 29 878 bng 20 250 50 0 preset_lucid_dreaming empty LucidDreaming
+35 10 0 10 #3c248c #000000 #000000;
+#X obj 29 965 bng 20 250 50 0 preset_astral_projection empty AstralProjection
+35 10 0 10 #246c8c #000000 #000000;
+#X obj 30 996 bng 20 250 50 0 preset_energy empty Energy 35 10 0 10
+#248c50 #000000 #000000;
+#X obj 174 523 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15 0
+10 #ecd48c #000000 #000000;
+#X obj 312 801 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
+10 #ecd48c #000000 #000000;
+#X obj 307 599 bng 40 250 50 0 key-octave-4 empty oct-4 3 20 0 12 #fcfcc4
+#000000 #000000;
+#N canvas 1316 426 509 502 Visu 0;
+#X obj 54 14 r~ toPlot;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array signal 1000 float 0;
+#X coords 0 1 999 -1 200 140 1;
+#X restore 98 92 graph;
+#X obj 60 279 tabwrite~ signal;
+#X obj 306 80 tgl 15 0 empty empty ON 2 8 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 336 242 metro 100;
+#X obj 307 110 vu 10 120 empty empty -1 -8 0 10 #404040 #000000 0 0
+;
+#X obj 269 30 env~;
+#X obj 333 58 - 102;
+#X obj 320 388 s~ toPlot;
+#X obj 300 350 r~ OUT_left;
+#X connect 0 0 2 0;
+#X connect 0 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 9 0 8 0;
+#X coords 0 -1 1 1 250 180 1 82 64;
+#X restore 685 648 pd Visu;
+#X obj 209 351 vsl 20 100 0 150 0 1 phase_cutoff_knob phase_cutoff_knob
+empty 0 -9 0 10 #acbcf8 #000000 #000000 4000 1;
+#X obj 280 351 vsl 20 100 0 120 0 1 phase_resonance_knob empty empty
+0 -9 0 10 #acbcf8 #000000 #000000 6100 1;
+#X obj 278 323 nbx 4 20 -1e+37 1e+37 0 0 phase_resonance phase_resonance_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj 207 323 nbx 4 20 -1e+37 1e+37 0 0 phase_cutoff phase_cutoff_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X text 253 462 resonance;
+#X text 192 462 cut off;
+#X text 223 290 Phase + Sq;
+#X obj 334 281 cnv 15 215 220 empty empty empty 24 15 0 18 #d09cd8
+#404040 0;
+#X obj 359 350 vsl 20 100 0 140 0 1 noise_cutoff_knob empty empty 0
+-9 0 10 #fcc4c4 #000000 #000000 4350 1;
+#X obj 430 350 vsl 20 100 0 120 0 1 noise_resonance_knob empty empty
+0 -9 0 10 #fcc4c4 #000000 #000000 6600 1;
+#X obj 417 315 nbx 4 20 -1e+37 1e+37 0 0 noise_resonance noise_resonance_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj 485 315 nbx 4 20 -1e+37 1e+37 0 0 noise_panning noise_panning_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj 346 315 nbx 4 20 -1e+37 1e+37 0 0 noise_cutoff noise_cutoff_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj 500 350 vsl 20 100 0 120 0 1 noise_panning_knob empty empty
+0 -9 0 10 #fcc4c4 #000000 #000000 8050 1;
+#X text 415 289 Noise;
+#X text 403 461 resonance;
+#X text 342 461 cut off;
+#X text 486 461 pan fx;
+#X obj 274 489 cnv 15 179 67 empty empty empty 24 15 0 18 #d09cd8 #404040
+0;
+#X obj 283 522 hsl 100 20 0 60 0 0 noise_volume_knob noise_volume_knob
+empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X text 297 502 Noise Volume;
+#X obj 397 529 nbx 4 20 -1e+37 1e+37 0 0 noise_volume_knob noise_volume_knob
+empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
+#X obj -1 1122 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0
+#404040 0;
+#X obj 507 1362 bng 30 250 50 0 \$0-nextview0 empty next 4 15 0 10
+#ecd48c #000000 #000000;
+#X obj 472 1362 bng 30 250 50 0 \$0-nextview3 empty prev 4 15 0 10
+#ecd48c #000000 #000000;
+#X text 267 1135 Random;
+#X obj 93 1190 vsl 20 100 1 30 0 1 rand_fm_freq empty empty 0 -9 0
+10 #5498a0 #000000 #000000 1100 1;
+#X obj 93 1160 tgl 24 0 random_FM empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 189 1190 vsl 20 100 1 20 0 1 rand_beat_freq empty empty 0 -9
+0 10 #c4fcc4 #000000 #000000 900 1;
+#X obj -1 188 cnv 15 334 93 empty empty empty 24 15 0 18 #9cc8d8 #404040
+0;
+#X text 25 207 FM mod freq:;
+#X text 18 238 FM mod depth:;
+#X obj 246 245 nbx 5 20 -1e+37 1e+37 0 1 FM_mod_depth FM_mod_depth_knob
+empty 0 -8 0 10 #fcfcfc #000000 #000000 75 256;
+#X obj 125 234 hsl 100 20 0 120 0 1 FM_mod_depth_knob FM_mod_depth_knob
+empty -2 -8 0 10 #dcdcdc #000000 #000000 6187 1;
+#X obj 246 209 nbx 5 20 -1e+37 1e+37 0 1 FM_Freq FM_Freq_knob empty
+0 -8 0 10 #fcfcfc #000000 #000000 50 256;
+#X obj 125 198 hsl 100 20 0 300 0 1 FM_Freq_knob FM_Freq_knob empty
+-2 -8 0 10 #dcdcdc #000000 #000000 1650 1;
+#X obj 472 242 bng 30 250 50 0 \$0-nextview4 empty prev 4 15 0 10 #c4fcfc
+#605c5c #000000;
+#X obj 304 1190 vsl 20 100 1 100 0 1 rand_noise_cutoff empty empty
+0 -9 0 10 #ac74d0 #000000 #000000 7300 1;
+#X text 274 1302 Noise Cutoff;
+#X text 159 1302 Beat Freq;
+#X text 75 1302 FM Freq;
+#X obj 385 1190 vsl 20 100 1 100 0 1 rand_noise_resonance empty empty
+0 -9 0 10 #ac74d0 #000000 #000000 8400 1;
+#X obj 468 1190 vsl 20 100 1 100 0 1 rand_noise_panning empty empty
+0 -9 0 10 #ac74d0 #000000 #000000 7250 1;
+#X text 466 1302 panning;
+#X text 364 1302 Noise Reson.;
+#X obj 187 1159 tgl 24 0 random_beat empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 383 1159 tgl 24 0 random_noise empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 245 1022 bng 20 250 50 0 preset_reset empty empty 17 7 0 10
+#e8f0fc #000000 #000000;
+#X text 274 1027 Reset to sine wav only;
+#X obj 31 1026 bng 20 250 50 0 preset_throat01 empty Throat 35 10 0
+10 #d0900c #000000 #000000;
+#X obj 33 523 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10 #ecd48c
+#000000 #000000;
+#X obj 206 70 vsl 20 100 0 64 0 1 Beat_Frequency_knob green-vsl empty
+0 -9 0 10 #c4fcc4 #000000 #000000 773 1;
+#X obj 56 72 vsl 20 100 0 440 0 1 Main_Frequency_knob yellow-vsl empty
+0 -9 0 10 #fcfc84 #000000 #000000 2100 1;
+#X obj 674 37 cnv 15 80 24 empty empty empty 24 15 0 18 #98acb4 #404040
+0;
+#X text 339 254 by Garvalf;
+#X text 680 37 by Garvalf;
+#X text 356 126 Sine Volume;
+#X obj 174 801 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15 0
+10 #ecd48c #000000 #000000;
+#X obj 33 801 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10 #ecd48c
+#000000 #000000;
+#X obj 312 1082 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
+10 #ecd48c #000000 #000000;
+#X obj 174 1082 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15
+0 10 #ecd48c #000000 #000000;
+#X obj 33 1082 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10
+#ecd48c #000000 #000000;
+#X obj 312 1362 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
+10 #ecd48c #000000 #000000;
+#X obj 174 1362 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15
+0 10 #ecd48c #000000 #000000;
+#X obj 33 1362 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10
+#ecd48c #000000 #000000;
+#X text 672 66 https://github.com/farvardin/binaural-synth;
+#N canvas 6 323 938 694 drumbox 0;
+#X obj 97 158 metro 1 120 permin;
+#X obj 97 82 tgl 20 0 empty beat_on empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 59 237 bng 25 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 260 134 /;
+#X msg 260 109 1 \$1;
+#X msg 260 78 0.5;
+#X msg 296 78 1;
+#X msg 332 78 4;
+#X text 291 135 beat length;
+#X msg 136 107 tempo \$1 permin;
+#X floatatom 135 71 5 0 0 0 - - - 0;
+#X msg 136 214 0 \, 1 200;
+#X obj 138 251 line~;
+#X obj 136 282 sqrt~;
+#X obj 138 326 *~ 20;
+#X obj 138 378 -~ 0.25;
+#X obj 138 403 cos~;
+#X obj 124 510 dac~;
+#X obj 141 446 *~;
+#X obj 236 379 r drum_volume;
+#X obj 467 243 hsl 128 15 0 127 0 0 empty beat_volume empty -2 -8 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 463 315 pack 0 50;
+#X obj 479 358 line;
+#X obj 531 419 s drum_volume;
+#X obj 463 288 / 256;
+#X obj 136 27 r tempo;
+#X connect 0 0 2 0;
+#X connect 0 0 11 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 9 0 0 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
+#X connect 18 0 17 1;
+#X connect 19 0 18 1;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 24 0 21 0;
+#X connect 25 0 10 0;
+#X restore 635 907 pd drumbox;
+#X obj 449 571 cnv 15 100 210 empty empty empty 20 12 0 14 #fce0c4
+#404040 0;
+#X obj 470 606 vsl 15 118 0 240 0 0 tempo empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 515 597 vsl 15 128 0 127 0 0 beat_volume empty empty 0 -9 0
+10 #fcfcfc #000000 #000000 0 1;
+#X text 508 739 vol;
+#X text 484 759 Beat;
+#X obj 492 577 tgl 15 0 beat_on empty empty 17 7 0 10 #fc8000 #000000
+#000000 0 1;
+#X obj 29 935 bng 20 250 50 0 preset_lucid_dreaming_alt1 empty LucidDeamingAlt
+35 10 0 10 #246c8c #000000 #000000;
+#X obj 384 584 hsl 40 20 432 440 0 0 tuning empty tuning -2 -8 0 10
+#fcfcc4 #000000 #000000 0 1;
+#X obj 119 136 hsl 35 20 0 1 0 0 main_stereo empty to_mono -5 -8 0
+10 #fcfcfc #000000 #000000 0 1;
+#X obj 29 905 bng 20 250 50 0 preset_sleep empty Sleep 35 10 0 10 #3c248c
+#000000 #000000;
+#N canvas 985 86 965 747 presets 0;
 #X text 484 25 Disclamer: Those presets are only for educational/entertainment
 purposes and are not claimed to be based on scientifical researches.
 ;
@@ -80,38 +486,6 @@ purposes and are not claimed to be based on scientifical researches.
 #X connect 41 0 43 0;
 #X connect 42 0 43 0;
 #X restore 664 181 pd presets;
-#N canvas 1009 134 603 417 volume 0;
-#X obj 121 161 / 127;
-#X obj 121 188 pack 0 50;
-#X obj 137 231 line;
-#X obj 121 13 loadbang;
-#X msg 121 59 100;
-#X obj 121 298 s sine_volume;
-#X obj 347 105 r sine_volume_knob;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 6 0 0 0;
-#X coords 0 -1 1 1 140 40 1 100 100;
-#X restore 667 295 pd volume sine;
-#N canvas 105 366 415 411 volume 0;
-#X obj 115 163 / 127;
-#X obj 121 188 pack 0 50;
-#X obj 137 231 line;
-#X obj 121 34 loadbang;
-#X msg 121 59 50;
-#X obj 121 298 s FM_volume;
-#X obj 253 136 r FM_volume_knob;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 6 0 0 0;
-#X coords 0 -1 1 1 140 40 1 100 100;
-#X restore 667 352 pd volume FM;
 #N canvas 944 234 827 588 viewport 0;
 #X obj 77 299 s ViewPort;
 #X msg 77 164 vis_size \$1 \$2;
@@ -157,18 +531,6 @@ bang is clicked);
 #X connect 20 0 19 0;
 #X connect 21 0 19 0;
 #X restore 663 152 pd viewport;
-#N canvas 599 112 616 414 volume 0;
-#X obj 121 161 / 127;
-#X obj 121 188 pack 0 50;
-#X obj 137 231 line;
-#X obj 121 298 s noise_volume;
-#X obj 278 60 r noise_volume_knob;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 4 0 0 0;
-#X coords 0 -1 1 1 140 40 1 100 100;
-#X restore 667 409 pd volume noise;
 #N canvas 669 193 1035 849 variate 0;
 #X msg 156 41 bang;
 #X obj 144 96 metro;
@@ -385,372 +747,15 @@ bang is clicked);
 #X connect 45 0 23 1;
 #X connect 46 0 24 1;
 #X restore 664 121 pd variate;
-#X obj 688 250 binauralsynth;
+#X obj 815 158 image garvalf.png 0;
 #X obj 557 0 cnv 15 197 36 empty empty BinauralSynth 24 15 0 18 #9cd0d8
 #404040 0;
-#N canvas 370 169 603 417 volume 0;
-#X obj 121 161 / 127;
-#X obj 121 188 pack 0 50;
-#X obj 137 231 line;
-#X obj 121 13 loadbang;
-#X msg 121 59 100;
-#X obj 347 105 r phasor_volume_knob;
-#X obj 121 298 s phasor_volume;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 6 0;
-#X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X coords 0 -1 1 1 140 40 1 100 100;
-#X restore 667 527 pd volume phasor;
-#N canvas 1009 134 709 498 volume 0;
-#X obj 121 161 / 127;
-#X obj 121 188 pack 0 50;
-#X obj 137 231 line;
-#X obj 121 13 loadbang;
-#X msg 121 59 100;
-#X obj 347 105 r square_volume_knob;
-#X obj 121 298 s square_volume;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 6 0;
-#X connect 3 0 4 0;
-#X connect 4 0 0 0;
-#X connect 5 0 0 0;
-#X coords 0 -1 1 1 140 40 1 100 100;
-#X restore 667 579 pd volume square;
-#X obj 0 0 cnv 15 550 280 empty ViewPort empty 20 12 0 14 #7c7c7c #fcfcfc
-0;
-#X obj 964 0 cnv 16 550 280 empty empty empty 20 12 0 14 #b8dcd8 #404040
-0;
-#X obj 187 41 nbx 5 20 -1e+37 1e+37 0 1 Beat_Frequency_final Beat_Frequency_knob
-empty 0 -8 0 10 #c4fcc4 #000000 #000000 3.4 256;
-#X text 254 41 Hz;
-#X text 106 42 Hz;
-#X obj 37 42 nbx 5 20 -1e+37 1e+37 0 1 Main_Frequency Main_Frequency_knob
-empty 0 -8 0 10 #fcfcc4 #000000 #000000 432 256;
-#X text 14 14 Carrier Frequency;
-#X text 166 14 Beat Frequency;
-#X obj 347 139 hsl 100 20 0 100 0 1 sine_volume_knob empty empty -2
--8 0 10 #dcdcdc #000000 #000000 8700 1;
-#X obj 347 188 hsl 100 20 0 100 0 1 FM_volume_knob FM_volume_knob empty
--2 -8 0 10 #dcdcdc #000000 #000000 0 1;
-#X text 360 176 FM Volume;
-#X obj 507 242 bng 30 250 50 0 \$0-nextview1 empty next 4 15 0 10 #c4fcfc
-#202020 #000000;
-#X obj 460 151 nbx 4 20 -1e+37 1e+37 0 1 empty sine_volume_knob empty
-0 -8 0 10 #a0e0d8 #000000 #000000 87.8788 256;
-#X obj 460 200 nbx 4 20 -1e+37 1e+37 0 1 empty FM_volume_knob empty
-0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 347 90 hsl 100 20 0 110 0 1 master_volume_knob master_volume-vsl
-empty -2 -8 0 10 #dcdcdc #000000 #000000 8200 1;
-#X text 357 78 Main Volume;
-#X obj 460 102 nbx 4 20 -1e+37 1e+37 0 1 empty master_volume_knob empty
-0 -8 0 10 #a0e0d8 #000000 #000000 91.1111 256;
-#X obj -1 280 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
-0;
-#X obj 507 522 bng 30 250 50 0 \$0-nextview2 empty next 4 15 0 10 #ecd48c
-#000000 #000000;
-#X obj 815 158 image garvalf.png 0;
-#X obj -1 560 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
-0;
-#X obj 17 719 bng 40 250 50 0 key-C empty C 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 79 719 bng 40 250 50 0 key-D empty D 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 96 599 bng 40 250 50 0 key-octave-1 empty oct-1 3 20 0 12 #fcfcc4
-#000000 #000000;
-#X obj 167 599 bng 40 250 50 0 key-octave-2 empty oct-2 3 20 0 12 #fcfcc4
-#000000 #000000;
-#X obj 238 599 bng 40 250 50 0 key-octave-3 empty oct-3 3 20 0 12 #fcfcc4
-#000000 #000000;
-#X obj 140 719 bng 40 250 50 0 key-E empty E 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 48 664 bng 40 250 50 0 key-Cs empty C^ 15 20 0 14 #b8b8b8 #000000
-#000000;
-#X obj 110 664 bng 40 250 50 0 key-Ds empty D^ 15 20 0 14 #b8b8b8 #000000
-#000000;
-#X obj 199 719 bng 40 250 50 0 key-F empty F 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 259 719 bng 40 250 50 0 key-G empty G 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 318 719 bng 40 250 50 0 key-A empty A 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 230 664 bng 40 250 50 0 key-Fs empty F^ 15 20 0 14 #b8b8b8 #000000
-#000000;
-#X obj 292 664 bng 40 250 50 0 key-Gs empty G^ 15 20 0 14 #b8b8b8 #000000
-#000000;
-#X obj 376 719 bng 40 250 50 0 key-B empty B 17 20 0 14 #fcfcfc #000000
-#000000;
-#X obj 350 664 bng 40 250 50 0 key-As empty A^ 15 20 0 14 #b8b8b8 #000000
-#000000;
-#X obj 23 599 bng 40 250 50 0 key-octave-0 empty oct-0 3 20 0 12 #fcfcc4
-#000000 #000000;
-#X obj 472 522 bng 30 250 50 0 \$0-nextview0 empty prev 4 15 0 10 #ecd48c
-#000000 #000000;
-#X obj 25 334 hsl 100 20 0 100 0 1 phasor_volume_knob phasor_volume_knob
-empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
-#X obj 139 347 nbx 4 20 -1e+37 1e+37 0 0 empty phasor_volume_knob empty
-0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 25 394 hsl 100 20 0 100 0 1 square_volume_knob square_volume_knob
-empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
-#X obj 139 407 nbx 4 20 -1e+37 1e+37 0 0 empty square_volume_knob empty
-0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X text 39 320 Phasor Volume;
-#X text 39 380 Square Volume;
-#X obj 24 453 hsl 50 20 1 50 0 1 square_pwm_knob empty empty -2 -8
-0 10 #dcdcdc #000000 #000000 3500 1;
-#X obj 85 466 nbx 4 20 1 99 0 1 empty square_pwm empty 0 -8 0 10 #a0e0d8
-#000000 #000000 36 256;
-#X text 38 439 Square PWM;
-#X obj 507 801 bng 30 250 50 0 \$0-nextview3 empty next 4 15 0 10 #ecd48c
-#000000 #000000;
-#X obj -1 841 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0 #404040
-0;
-#X text 267 854 Presets;
-#X obj 472 801 bng 30 250 50 0 \$0-nextview1 empty prev 4 15 0 10 #ecd48c
-#000000 #000000;
-#X obj 507 1082 bng 30 250 50 0 \$0-nextview4 empty next 4 15 0 10
-#ecd48c #000000 #000000;
-#X obj 472 1082 bng 30 250 50 0 \$0-nextview2 empty prev 4 15 0 10
-#ecd48c #000000 #000000;
-#X text 273 890 Delta Waves (0 Hz to 3.5 Hz);
-#X obj 245 884 bng 20 250 50 0 preset_delta empty empty 17 7 0 10 #3c248c
-#000000 #000000;
-#X text 272 939 Alpha Waves (8 Hz to 12 Hz);
-#X text 273 914 Theta Waves (3.5 Hz to 8 Hz);
-#X text 272 964 Beta Waves (12 Hz to 30 Hz);
-#X text 272 989 Gamma Waves (30 Hz to 100 Hz);
-#X obj 245 909 bng 20 250 50 0 preset_theta empty empty 17 7 0 10 #246c8c
-#000000 #000000;
-#X obj 245 934 bng 20 250 50 0 preset_alpha empty empty 17 7 0 10 #248c50
-#000000 #000000;
-#X obj 245 959 bng 20 250 50 0 preset_beta empty empty 17 7 0 10 #d0900c
-#000000 #000000;
-#X obj 245 984 bng 20 250 50 0 preset_gamma empty empty 17 7 0 10 #b82c10
-#000000 #000000;
-#X obj 29 878 bng 20 250 50 0 preset_lucid_dreaming empty LucidDreaming
-35 10 0 10 #3c248c #000000 #000000;
-#X obj 29 965 bng 20 250 50 0 preset_astral_projection empty AstralProjection
-35 10 0 10 #246c8c #000000 #000000;
-#X obj 30 996 bng 20 250 50 0 preset_energy empty Energy 35 10 0 10
-#248c50 #000000 #000000;
-#X obj 174 523 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15 0
-10 #ecd48c #000000 #000000;
-#X obj 312 801 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
-10 #ecd48c #000000 #000000;
-#X obj 307 599 bng 40 250 50 0 key-octave-4 empty oct-4 3 20 0 12 #fcfcc4
-#000000 #000000;
-#N canvas 1316 426 509 502 Visu 0;
-#X obj 54 14 r~ toPlot;
-#N canvas 0 50 450 250 (subpatch) 0;
-#X array signal 1000 float 0;
-#X coords 0 1 999 -1 200 140 1;
-#X restore 98 92 graph;
-#X obj 60 279 tabwrite~ signal;
-#X obj 306 80 tgl 15 0 empty empty ON 2 8 0 10 #fcfcfc #000000 #000000
-0 1;
-#X obj 336 242 metro 100;
-#X obj 307 110 vu 10 120 empty empty -1 -8 0 10 #404040 #000000 0 0
-;
-#X obj 269 30 env~;
-#X obj 333 58 - 102;
-#X obj 320 388 s~ toPlot;
-#X obj 300 350 r~ OUT_left;
-#X connect 0 0 2 0;
-#X connect 0 0 6 0;
-#X connect 3 0 4 0;
-#X connect 4 0 2 0;
-#X connect 6 0 7 0;
-#X connect 7 0 5 0;
-#X connect 9 0 8 0;
-#X coords 0 -1 1 1 250 180 1 82 64;
-#X restore 622 664 pd Visu;
-#X obj 209 351 vsl 20 100 0 150 0 1 phase_cutoff_knob phase_cutoff_knob
-empty 0 -9 0 10 #acbcf8 #000000 #000000 4000 1;
-#X obj 280 351 vsl 20 100 0 120 0 1 phase_resonance_knob empty empty
-0 -9 0 10 #acbcf8 #000000 #000000 6100 1;
-#X obj 267 316 nbx 4 20 -1e+37 1e+37 0 0 phase_resonance phase_resonance_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 196 316 nbx 4 20 -1e+37 1e+37 0 0 phase_cutoff phase_cutoff_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X text 253 462 resonance;
-#X text 192 462 cut off;
-#X text 223 290 Phase + Sq;
-#X obj 334 281 cnv 15 215 220 empty empty empty 24 15 0 18 #d09cd8
-#404040 0;
-#X obj 359 350 vsl 20 100 0 140 0 1 noise_cutoff_knob empty empty 0
--9 0 10 #fcc4c4 #000000 #000000 4350 1;
-#X obj 430 350 vsl 20 100 0 120 0 1 noise_resonance_knob empty empty
-0 -9 0 10 #fcc4c4 #000000 #000000 6600 1;
-#X obj 417 315 nbx 4 20 -1e+37 1e+37 0 0 noise_resonance noise_resonance_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 485 315 nbx 4 20 -1e+37 1e+37 0 0 noise_panning noise_panning_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 346 315 nbx 4 20 -1e+37 1e+37 0 0 noise_cutoff noise_cutoff_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj 500 350 vsl 20 100 0 120 0 1 noise_panning_knob empty empty
-0 -9 0 10 #fcc4c4 #000000 #000000 8050 1;
-#X text 415 289 Noise;
-#X text 403 461 resonance;
-#X text 342 461 cut off;
-#X text 486 461 pan fx;
-#X obj 274 489 cnv 15 179 67 empty empty empty 24 15 0 18 #d09cd8 #404040
-0;
-#X obj 283 522 hsl 100 20 0 60 0 0 noise_volume_knob noise_volume_knob
-empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
-#X text 297 502 Noise Volume;
-#X obj 397 529 nbx 4 20 -1e+37 1e+37 0 0 noise_volume_knob noise_volume_knob
-empty 0 -8 0 10 #a0e0d8 #000000 #000000 0 256;
-#X obj -1 1122 cnv 16 550 280 empty empty empty 20 12 0 14 #fcf8a0
-#404040 0;
-#X obj 507 1362 bng 30 250 50 0 \$0-nextview0 empty next 4 15 0 10
-#ecd48c #000000 #000000;
-#X obj 472 1362 bng 30 250 50 0 \$0-nextview3 empty prev 4 15 0 10
-#ecd48c #000000 #000000;
-#X text 267 1135 Random;
-#X obj 93 1190 vsl 20 100 1 30 0 1 rand_fm_freq empty empty 0 -9 0
-10 #5498a0 #000000 #000000 1100 1;
-#X obj 93 1160 tgl 24 0 random_FM empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 189 1190 vsl 20 100 1 20 0 1 rand_beat_freq empty empty 0 -9
-0 10 #c4fcc4 #000000 #000000 900 1;
-#X obj -1 188 cnv 15 334 93 empty empty empty 24 15 0 18 #9cc8d8 #404040
-0;
-#X text 25 207 FM mod freq:;
-#X text 18 238 FM mod depth:;
-#X obj 246 245 nbx 5 20 -1e+37 1e+37 0 1 FM_mod_depth FM_mod_depth_knob
-empty 0 -8 0 10 #fcfcfc #000000 #000000 75 256;
-#X obj 125 234 hsl 100 20 0 120 0 1 FM_mod_depth_knob FM_mod_depth_knob
-empty -2 -8 0 10 #dcdcdc #000000 #000000 6187 1;
-#X obj 246 209 nbx 5 20 -1e+37 1e+37 0 1 FM_Freq FM_Freq_knob empty
-0 -8 0 10 #fcfcfc #000000 #000000 50 256;
-#X obj 125 198 hsl 100 20 0 300 0 1 FM_Freq_knob FM_Freq_knob empty
--2 -8 0 10 #dcdcdc #000000 #000000 1650 1;
-#X obj 472 242 bng 30 250 50 0 \$0-nextview4 empty prev 4 15 0 10 #c4fcfc
-#605c5c #000000;
-#X obj 304 1190 vsl 20 100 1 100 0 1 rand_noise_cutoff empty empty
-0 -9 0 10 #ac74d0 #000000 #000000 7300 1;
-#X text 274 1302 Noise Cutoff;
-#X text 159 1302 Beat Freq;
-#X text 75 1302 FM Freq;
-#X obj 385 1190 vsl 20 100 1 100 0 1 rand_noise_resonance empty empty
-0 -9 0 10 #ac74d0 #000000 #000000 8400 1;
-#X obj 468 1190 vsl 20 100 1 100 0 1 rand_noise_panning empty empty
-0 -9 0 10 #ac74d0 #000000 #000000 7250 1;
-#X text 466 1302 panning;
-#X text 364 1302 Noise Reson.;
-#X obj 187 1159 tgl 24 0 random_beat empty empty 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 383 1159 tgl 24 0 random_noise empty empty 17 7 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 245 1022 bng 20 250 50 0 preset_reset empty empty 17 7 0 10
-#e8f0fc #000000 #000000;
-#X text 274 1027 Reset to sine wav only;
-#X obj 31 1026 bng 20 250 50 0 preset_throat01 empty Throat 35 10 0
-10 #d0900c #000000 #000000;
-#X obj 33 523 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10 #ecd48c
-#000000 #000000;
-#X obj 206 70 vsl 20 100 0 64 0 1 Beat_Frequency_knob green-vsl empty
-0 -9 0 10 #c4fcc4 #000000 #000000 773 1;
-#X obj 56 72 vsl 20 100 0 440 0 1 Main_Frequency_knob yellow-vsl empty
-0 -9 0 10 #fcfc84 #000000 #000000 2100 1;
-#X obj 674 37 cnv 15 80 24 empty empty empty 24 15 0 18 #98acb4 #404040
-0;
-#X text 6 1129 by Garvalf;
-#X text 680 37 by Garvalf;
-#X text 356 126 Sine Volume;
-#X obj 174 801 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15 0
-10 #ecd48c #000000 #000000;
-#X obj 33 801 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10 #ecd48c
-#000000 #000000;
-#X obj 312 1082 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
-10 #ecd48c #000000 #000000;
-#X obj 174 1082 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15
-0 10 #ecd48c #000000 #000000;
-#X obj 33 1082 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10
-#ecd48c #000000 #000000;
-#X obj 312 1362 bng 30 250 50 0 \$0-nextview3 empty presets 36 15 0
-10 #ecd48c #000000 #000000;
-#X obj 174 1362 bng 30 250 50 0 \$0-nextview2 empty keyboard 36 15
-0 10 #ecd48c #000000 #000000;
-#X obj 33 1362 bng 30 250 50 0 \$0-nextview0 empty main 36 15 0 10
-#ecd48c #000000 #000000;
-#X text 672 66 https://github.com/farvardin/binaural-synth;
-#N canvas 6 323 938 694 drumbox 0;
-#X obj 97 158 metro 1 120 permin;
-#X obj 97 82 tgl 20 0 empty beat_on empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 59 237 bng 25 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 260 134 /;
-#X msg 260 109 1 \$1;
-#X msg 260 78 0.5;
-#X msg 296 78 1;
-#X msg 332 78 4;
-#X text 291 135 beat length;
-#X msg 136 107 tempo \$1 permin;
-#X floatatom 135 71 5 0 0 0 - - - 0;
-#X msg 136 214 0 \, 1 200;
-#X obj 138 251 line~;
-#X obj 136 282 sqrt~;
-#X obj 138 326 *~ 20;
-#X obj 138 378 -~ 0.25;
-#X obj 138 403 cos~;
-#X obj 124 510 dac~;
-#X obj 141 446 *~;
-#X obj 236 379 r drum_volume;
-#X obj 467 243 hsl 128 15 0 127 0 0 empty beat_volume empty -2 -8 0
-10 #fcfcfc #000000 #000000 0 1;
-#X obj 463 315 pack 0 50;
-#X obj 479 358 line;
-#X obj 531 419 s drum_volume;
-#X obj 463 288 / 256;
-#X obj 136 27 r tempo;
-#X connect 0 0 2 0;
-#X connect 0 0 11 0;
-#X connect 1 0 0 0;
-#X connect 3 0 0 1;
-#X connect 4 0 3 0;
-#X connect 5 0 4 0;
-#X connect 6 0 4 0;
-#X connect 7 0 4 0;
-#X connect 9 0 0 0;
-#X connect 10 0 9 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 18 0;
-#X connect 18 0 17 0;
-#X connect 18 0 17 1;
-#X connect 19 0 18 1;
-#X connect 20 0 24 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 24 0 21 0;
-#X connect 25 0 10 0;
-#X restore 635 907 pd drumbox;
-#X obj 449 571 cnv 15 100 210 empty empty empty 20 12 0 14 #fce0c4
-#404040 0;
-#X obj 470 597 vsl 15 118 0 256 0 0 tempo empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 515 597 vsl 15 128 0 127 0 0 beat_volume empty empty 0 -9 0
-10 #fcfcfc #000000 #000000 0 1;
+#X obj 396 623 nbx 4 20 -1e+37 1e+37 0 1 empty tuning empty 0 -8 0
+10 #fcfcc4 #000000 #000000 432 256;
+#X obj 142 165 nbx 4 20 -1e+37 1e+37 0 1 empty main_stereo empty 0
+-8 0 10 #a0e0d8 #000000 #000000 87.1111 256;
+#X obj 467 599 nbx 4 20 -1e+37 1e+37 0 1 empty tempo empty 0 -8 0 10
+#fcfcc4 #000000 #000000 0 256;
 #X text 460 740 tempo;
-#X text 508 739 vol;
-#X text 484 759 Beat;
-#X obj 492 577 tgl 15 0 beat_on empty empty 17 7 0 10 #fc8000 #000000
-#000000 0 1;
-#X floatatom 461 721 5 0 0 0 - tempo - 0;
-#X obj 29 935 bng 20 250 50 0 preset_lucid_dreaming_alt1 empty LucidDeamingAlt
-35 10 0 10 #246c8c #000000 #000000;
-#X obj 374 591 hsl 40 20 432 440 0 0 tuning empty tuning\ 432-440 -20
--8 0 10 #feffc6 #000000 #000000 0 1;
-#X obj 126 159 hsl 20 15 0 1 0 0 empty empty bino\ ->\ monaural -30
--8 0 10 #fcfcfc #000000 #000000 0 1;
-#X obj 29 905 bng 20 250 50 0 preset_sleep empty Sleep 35 10 0 10 #3c248c
-#000000 #000000;
+#X obj 815 113 binauralsynth;
 #X coords 0 0 1 1 85 60 0;
