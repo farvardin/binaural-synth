@@ -1,5 +1,5 @@
-#N canvas 622 26 1256 965 10;
-#X obj 599 -8 cnv 15 277 900 empty empty empty 46 13 0 14 #9cd080 #404040
+#N canvas 622 98 1256 965 10;
+#X obj 599 -8 cnv 15 277 900 empty empty empty 46 13 0 14 -163105 -66577
 0;
 #N canvas 127 87 877 871 output 0;
 #X obj 353 490 t b;
@@ -20,9 +20,9 @@
 #X text 138 464 test if less than 1 -->;
 #X text 104 491 if true convert to bang -->;
 #X text 183 99 <-- convert from dB to linear units;
-#X floatatom 323 219 3 0 100 0 dB - - 0;
-#X obj 350 240 bng 15 250 50 0 empty empty mute -38 7 0 12 #fcfcfc
-#000000 #000000;
+#X floatatom 323 219 3 0 100 0 dB - -;
+#X obj 350 240 bng 15 250 50 0 empty empty mute -38 7 0 12 -262144
+-1 -1;
 #X text 191 125 <-- make a ramp to avoid clicks or zipper noise;
 #X obj 148 170 inlet~;
 #X obj 154 241 *~;
@@ -77,17 +77,16 @@ patch.;
 #X text 774 114 Hz;
 #X text 776 795 noise resonance;
 #X floatatom 741 795 5 0 200 0 - noise_resonance_knob noise_resonance
-0;
-#X floatatom 716 149 5 0 0 0 - Beat_Frequency_knob - 0;
-#X floatatom 786 149 5 -100 100 0 - - - 0;
-#X floatatom 732 115 5 0 0 0 - Main_Frequency_knob Main_Frequency 0
 ;
+#X floatatom 716 149 5 0 0 0 - Beat_Frequency_knob -;
+#X floatatom 786 149 5 -100 100 0 - - -;
+#X floatatom 732 115 5 0 0 0 - Main_Frequency_knob Main_Frequency;
 #N canvas 23 202 719 442 volume 0;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 106 113 hsl 110 15 0 127 0 0 empty volume_phasor empty -2 -8
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 189 292 s phasor_volume;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -100,7 +99,7 @@ patch.;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 106 113 hsl 128 15 0 127 0 0 empty noise_volume_knob empty -2
--8 0 10 #fcfcfc #000000 #000000 0 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X obj 121 298 s noise_volume;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -108,23 +107,22 @@ patch.;
 #X connect 3 0 0 0;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 600 742 pd volume noise;
-#X floatatom 609 796 5 0 140 0 - noise_cutoff_knob noise_cutoff 0;
+#X floatatom 609 796 5 0 140 0 - noise_cutoff_knob noise_cutoff;
 #X text 753 149 Hz;
 #X text 613 298 Add some effects with :;
-#X obj 620 -1 cnv 15 197 36 empty empty BinauralSynth 24 15 0 18 #7cb074
-#404040 0;
+#X obj 620 -1 cnv 15 197 36 empty empty BinauralSynth 24 15 0 18 -129822
+-66577 0;
 #X obj 802 204 +;
-#X floatatom 636 826 5 0 0 0 - noise_panning_knob noise_panning 0;
+#X floatatom 636 826 5 0 0 0 - noise_panning_knob noise_panning;
 #X text 678 827 noise panning effect;
-#X floatatom 606 859 5 0 200 0 - master_volume_knob master_volume 0
-;
+#X floatatom 606 859 5 0 200 0 - master_volume_knob master_volume;
 #X text 646 860 master volume;
 #N canvas 64 135 596 465 volume 0;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
-#X obj 106 113 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 106 113 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10000 1;
 #X obj 121 34 loadbang;
 #X msg 121 59 100;
 #X obj 121 298 s sine_volume;
@@ -140,8 +138,8 @@ patch.;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
-#X obj 106 112 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 106 112 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5000 1;
 #X obj 121 34 loadbang;
 #X msg 121 59 50;
 #X obj 121 298 s FM_volume;
@@ -153,8 +151,8 @@ patch.;
 #X connect 5 0 3 0;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 643 328 pd volume FM;
-#X floatatom 703 381 5 0 0 0 - - FM_Freq 0;
-#X floatatom 833 382 5 0 0 0 - - FM_mod_depth 0;
+#X floatatom 703 381 5 0 0 0 - - FM_Freq;
+#X floatatom 833 382 5 0 0 0 - - FM_mod_depth;
 #X obj 155 223 r~ OUT_left;
 #X obj 402 234 r~ OUT_right;
 #X text 743 381 FM mod depth:;
@@ -185,17 +183,17 @@ patch.;
 #X coords 0 1.02 130 -1.02 258 130 1;
 #X restore 609 434 graph;
 #X obj 821 83 image garvalf.png 0;
-#X text 622 41 by Garvalf;
+#X text 624 41 by Garvalf;
 #X text 642 796 noise cut off;
 #X obj 831 205 / 100;
 #X obj 828 631 nbx 2 15 1 99 0 0 square_pwm square_pwm_knob empty 0
--8 0 12 #acdcb8 #000000 #000000 0 256;
+-8 0 12 -179695 -1 -1 42 256;
 #N canvas 661 204 616 414 volume 0;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 106 113 hsl 110 15 0 127 0 0 empty volume_square empty -2 -8
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 121 298 s square_volume;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -308,9 +306,9 @@ patch.;
 #X obj 890 180 s Beat_Frequency_final;
 #N canvas 45 145 834 667 initialise 0;
 #X obj 406 -152 metro;
-#X floatatom 416 -183 5 0 0 0 - - - 0;
-#X obj 379 -164 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X floatatom 416 -183 5 0 0 0 - - -;
+#X obj 379 -164 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
 #X msg 346 -120 bang;
 #X obj 28 -192 loadbang;
 #X msg 75 20 4, f 5;
@@ -376,7 +374,7 @@ patch.;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 106 113 hsl 128 15 0 127 0 0 empty volume_master empty -2 -8
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 -262144 -1 -1 0 1;
 #X obj 121 298 s~ master_volume;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -422,12 +420,12 @@ patch.;
 #X connect 12 0 13 0;
 #X restore 454 152 pd mobmuplat;
 #N canvas 467 108 929 875 engine 0;
-#X floatatom 198 -83 5 0 0 0 - - - 0;
-#X floatatom 430 -94 5 0 0 0 - - - 0;
+#X floatatom 198 -83 5 0 0 0 - - -;
+#X floatatom 430 -94 5 0 0 0 - - -;
 #X obj 481 -23 osc~ 128;
 #X obj 375 -126 +;
 #X obj 263 -123 -;
-#X floatatom 399 -179 5 0 0 0 - - - 0;
+#X floatatom 399 -179 5 0 0 0 - - -;
 #X obj 331 -164 / 2;
 #X obj 202 58 phasor~;
 #X obj 452 36 phasor~;
@@ -435,19 +433,19 @@ patch.;
 #X obj 309 87 *~;
 #N canvas 76 118 730 649 FM 0;
 #X text 79 67 frequency;
-#X floatatom 95 199 4 0 0 0 - - - 0;
+#X floatatom 95 199 4 0 0 0 - - -;
 #X text 80 52 modulation;
 #X obj 80 170 *~;
 #X text 130 142 modulation;
 #X text 130 156 depth;
-#X floatatom 98 143 4 0 0 0 - - - 0;
+#X floatatom 98 143 4 0 0 0 - - -;
 #X obj 80 221 +~;
 #X text 128 204 frequency;
 #X obj 94 113 tabosc4~ pitchmod14;
 #X text 128 190 carrier;
 #X obj 80 248 outlet~;
 #X obj 265 86 inlet;
-#X floatatom 163 69 5 0 0 0 - - - 0;
+#X floatatom 163 69 5 0 0 0 - - -;
 #X obj 304 47 r FM_mod_depth;
 #X obj 231 22 r FM_Freq;
 #X connect 1 0 7 1;
@@ -462,19 +460,19 @@ patch.;
 #X restore 278 -57 pd FM;
 #N canvas 1081 197 730 603 FM 0;
 #X text 77 65 frequency;
-#X floatatom 95 199 4 0 0 0 - - - 0;
+#X floatatom 95 199 4 0 0 0 - - -;
 #X text 78 50 modulation;
 #X obj 80 170 *~;
 #X text 130 142 modulation;
 #X text 130 156 depth;
-#X floatatom 98 143 4 0 0 0 - - - 0;
+#X floatatom 98 143 4 0 0 0 - - -;
 #X obj 80 221 +~;
 #X text 128 204 frequency;
 #X obj 94 113 tabosc4~ pitchmod14;
 #X text 128 190 carrier;
 #X obj 80 248 outlet~;
 #X obj 265 86 inlet;
-#X floatatom 163 69 5 0 0 0 - - - 0;
+#X floatatom 163 69 5 0 0 0 - - -;
 #X obj 299 54 r FM_mod_depth;
 #X obj 204 19 r FM_Freq, f 6;
 #X connect 1 0 7 1;
@@ -495,8 +493,8 @@ patch.;
 #X obj 221 -211 r Main_Frequency;
 #X obj 207 370 tabwrite~ azerty;
 #X obj 192 397 table azerty;
-#X obj 69 318 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 69 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 81 343 metro 100;
 #N canvas 1100 98 450 323 square~ 0;
 #X obj 111 45 phasor~;
@@ -545,8 +543,8 @@ patch.;
 #X obj 731 5 *~;
 #X obj 21 -31 osc~ 60;
 #X obj 706 -33 osc~ 60;
-#X floatatom 141 -110 5 0 0 0 - - - 0;
-#X floatatom 584 -141 5 0 0 0 - - - 0;
+#X floatatom 141 -110 5 0 0 0 - - -;
+#X floatatom 584 -141 5 0 0 0 - - -;
 #X connect 0 0 7 0;
 #X connect 0 0 11 0;
 #X connect 0 0 13 0;
@@ -608,7 +606,7 @@ patch.;
 #X obj 411 253 line~;
 #X obj 808 143 mtof;
 #X obj 814 241 pack 0 50;
-#X floatatom 810 190 7 0 0 0 - - - 0;
+#X floatatom 810 190 7 0 0 0 - - -;
 #X obj 169 506 bob~;
 #X obj 297 439 +;
 #X obj 158 391 -;
@@ -666,7 +664,7 @@ patch.;
 #X obj 496 318 line~;
 #X obj 652 247 mtof;
 #X obj 658 345 pack 0 50;
-#X floatatom 655 294 7 0 0 0 - - - 0;
+#X floatatom 655 294 7 0 0 0 - - -;
 #X obj 273 524 bob~;
 #X obj 374 483 +;
 #X obj 219 479 -;
@@ -681,24 +679,24 @@ patch.;
 #X obj 51 35 noise~;
 #X obj 92 124 fexpr~ if(abs($x + $y) > 1 \, $y - $x \, $x + $y);
 #X obj 87 79 *~ 0.005;
-#X obj 141 19 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 #c6ffc7
-#000000 #000000 0 1;
-#X floatatom 259 54 5 0 0 0 - - - 0;
+#X obj 141 19 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -204786
+-1 -1 0 1;
+#X floatatom 259 54 5 0 0 0 - - -;
 #X obj 74 245 swap 1;
 #X obj 79 279 -;
 #X obj 39 290 *~;
 #X obj 158 261 *~;
-#X obj 77 206 hradio 15 1 0 2 empty empty empty 0 -8 0 10 #fcfcfc #000000
-#000000 0;
+#X obj 77 206 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
 #X obj 56 365 +~;
 #X text 573 53 white noise;
 #X text 164 84 brown noise;
 #X obj 321 12 r noise_brown_volume;
 #X text 23 663 https://forum.pdpatchrepo.info/topic/12460/brown-noise-generator/4
 ;
-#X floatatom 531 166 5 0 0 0 - - - 0;
+#X floatatom 531 166 5 0 0 0 - - -;
 #X obj 78 150 loadbang;
-#X floatatom 158 214 5 0 0 0 - - - 0;
+#X floatatom 158 214 5 0 0 0 - - -;
 #X msg 78 175 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -744,9 +742,9 @@ patch.;
 #X connect 37 0 28 0;
 #X restore 447 126 pd noise_filter;
 #X floatatom 740 661 5 0 200 0 - phase_resonance_knob phase_resonance
-0;
-#X floatatom 605 662 5 0 140 0 - phase_cutoff_knob phase_cutoff 0;
-#X floatatom 635 692 5 0 0 0 - phase_panning_knob phase_panning 0;
+;
+#X floatatom 605 662 5 0 140 0 - phase_cutoff_knob phase_cutoff;
+#X floatatom 635 692 5 0 0 0 - phase_panning_knob phase_panning;
 #X text 641 662 phase cut off;
 #X text 775 661 phase resonance;
 #X text 677 693 phase cutt off panning effect;
@@ -763,22 +761,22 @@ patch.;
 #X obj 347 354 +~;
 #X obj 233 339 +~;
 #X obj 285 211 sig~;
-#X obj 258 81 hsl 20 15 0 2 0 0 empty empty monaural -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 258 81 hsl 20 15 0 2 0 0 empty empty monaural -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 287 275 *~;
-#X obj 302 98 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X floatatom 115 163 5 0 0 0 - - - 0;
+#X obj 302 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 115 163 5 0 0 0 - - -;
 #X obj 116 133 r main_stereo;
 #X obj 240 133 s main_stereo;
 #N canvas 956 133 871 599 vibe 0;
-#X obj 333 103 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 333 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X obj 282 420 +;
-#X floatatom 514 156 5 0 0 0 - - - 0;
-#X obj 278 107 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
-#X floatatom 222 439 5 0 0 0 - - - 0;
+#X floatatom 514 156 5 0 0 0 - - -;
+#X obj 278 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 222 439 5 0 0 0 - - -;
 #X obj 343 371 int;
 #X obj 525 223 / 2;
 #X obj 343 174 metro 1 1 msec;
@@ -791,12 +789,12 @@ patch.;
 #X msg 441 400 -100;
 #X obj 106 231 r master_volume_knob;
 #X obj 167 516 s master_volume;
-#X floatatom 196 300 5 0 0 0 - - - 0;
-#X floatatom 536 387 5 0 0 0 - - - 0;
+#X floatatom 196 300 5 0 0 0 - - -;
+#X floatatom 536 387 5 0 0 0 - - -;
 #X obj 527 354 expr 0 - $f1;
-#X floatatom 110 336 5 0 0 0 - - - 0;
-#X obj 67 268 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X floatatom 110 336 5 0 0 0 - - -;
+#X obj 67 268 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X text 65 77 To be improved!;
 #X connect 0 0 7 0;
 #X connect 1 0 4 0;
@@ -835,10 +833,10 @@ patch.;
 #X obj 299 235 *~;
 #X obj 99 471 outlet~;
 #X obj 99 259 inlet~;
-#X obj 113 135 hsl 128 15 0.1 20 0 0 empty empty freq -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 112 171 hsl 128 15 0 10 0 0 empty empty amount -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 113 135 hsl 128 15 0.1 20 0 0 empty empty freq -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 112 171 hsl 128 15 0 10 0 0 empty empty amount -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 303 20 inlet;
 #X obj 396 26 inlet;
 #X text 262 531 based on http://www.pdpatchrepo.info/hurleur/vibrato.pd
@@ -866,10 +864,10 @@ patch.;
 #X obj 300 207 *~;
 #X obj 107 467 outlet~;
 #X obj 107 255 inlet~;
-#X obj 113 135 hsl 128 15 0.1 20 0 0 empty empty freq -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 112 171 hsl 128 15 0 10 0 0 empty empty amount -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 113 135 hsl 128 15 0.1 20 0 0 empty empty freq -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 112 171 hsl 128 15 0 10 0 0 empty empty amount -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 303 20 inlet;
 #X obj 396 26 inlet;
 #X text 262 531 based on http://www.pdpatchrepo.info/hurleur/vibrato.pd
@@ -895,7 +893,7 @@ patch.;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 106 116 hsl 110 15 0 127 0 0 empty noise_brown_volume_knob empty
--2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+-2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 121 298 s noise_brown_volume;
 #X obj 121 161 / 1270;
 #X connect 0 0 1 0;
@@ -907,8 +905,8 @@ patch.;
 #N canvas 488 63 596 465 volume 0;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
-#X obj 106 113 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
+#X obj 106 113 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 121 34 loadbang;
 #X obj 121 161 / 50;
 #X obj 121 298 s sine_subbass_volume;
