@@ -16,8 +16,11 @@ edit:
 	${EDITOR} ${SKETCH}.pd
 
 
-run:
+run-binaural:
 	${EDITOR} binauralsynth.pd
+
+run:
+	${EDITOR} droidparty_main.pd
 
 
 droidparty:

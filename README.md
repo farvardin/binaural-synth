@@ -14,6 +14,7 @@ Binaural Beats are fun! They can create hypnotic drones or high frequencies madn
 
  * https://clyp.it/ufkzshog
  * https://clyp.it/b4evitno
+ * https://soundcloud.com/memento-somniare/binaural-drone-2023-02-21
 
 ## Usage 
 
@@ -24,7 +25,7 @@ It works with:
 
 Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
 
- * droidparty_main.pd is the interface, with some presets 
+ * droidparty_main.pd is the main interface, with some presets 
  * extra.pd has some demo sequences and extra engines
  * binauralsynth.pd is the engine itself
  * you can find an example of a full "song" in the demos/sable folder (sable_test.pd is newer and reuses the synth instead of copying it in its patch, but this version sounds less good at the moment)
@@ -35,10 +36,12 @@ You can change the base frequency (called carrier frequency), and the beat frequ
 
 In addition to the classic, "traditional" Sine wave, you can also add, by increasing their volume:
 
+ * a Sine wave sub bass, which follows the main Sine frequency (one octave lower)
  * a FM generator, driven by a few parameters (including the modulation frequency, mod depth, and FM wave).
  * a phaser (sawtooth wave) generator 
  * a square generator
  * a white noise
+ * a brown noise
  * a drum beat (kick)
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
@@ -49,14 +52,17 @@ You can also send CC message (using knobs on your keyboard, if you have some), t
 
 You can use the binaural-synth with the pd-pulp VST, but it's not working correctly at the moment (you have to rename the virtual knobs to pdpulp_p1 *_p2... etc and change use a midi keyboard).
 
+
 ### Android and iOS 
 
  * There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty](http://www.droidparty.net/) app. It should also work with [PdParty on iOS](https://github.com/danomatika/PdParty).
-Just load the binaural.zip file found in the release tab.
+ 
+Just get the binaural.zip file found in the release tab and put the extracted content (folder "binaural") into /storage/emulated/0/Android/data/cx.mccormick.pddroidparty/files on your Android device.
 
 ![](binaural_screenshot_android.jpg)
 
  * There is also a mobmuplat.mmp file which you can use with [MobMuPlat](http://danieliglesia.com/mobmuplat/) (Mobile Music Platform). This template is not much developped, but it can be used as a basis. You can load this file along the Pd files on your smartphone.
+
 
 ## Licence 
 
