@@ -64,6 +64,14 @@ Just get the binaural.zip file found in the release tab and put the extracted co
  * There is also a mobmuplat.mmp file which you can use with [MobMuPlat](http://danieliglesia.com/mobmuplat/) (Mobile Music Platform). This template is not much developped, but it can be used as a basis. You can load this file along the Pd files on your smartphone.
 
 
+## Other great PureData patches
+
+For having other drone / noise PureData patches, have a look at those projects:
+
+- https://github.com/farvardin/nullpainter_drone
+- https://github.com/farvardin/LIRA-8/
+
+
 ## Licence 
 
 This software is copyrighted by Eric Forgeot and others.  The following
