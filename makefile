@@ -39,8 +39,10 @@ droidparty-make:
 	-rm -fr /tmp/binaural.pdz
 	mkdir -p /tmp/binaural
 	cp *.pd /tmp/binaural
+	cp -fr abs /tmp/binaural
 	cp *.txt /tmp/binaural
 	cp *.png /tmp/binaural
+	-rm -fr /tmp/binaural/*screenshot*
 	cp -fr svg/* /tmp/binaural
 	cp -fr *.ttf /tmp/binaural
 	cp -fr *.mmp /tmp/binaural

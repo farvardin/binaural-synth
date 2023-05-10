@@ -1,4 +1,4 @@
-#N canvas 645 148 1274 898 12;
+#N canvas 183 98 1274 898 12;
 #N canvas 1009 134 603 417 volume 0;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
@@ -6,7 +6,7 @@
 #X obj 121 13 loadbang;
 #X msg 121 59 100;
 #X obj 121 298 s sine_volume;
-#X obj 347 105 r sine_volume_knob;
+#X obj 347 105 r sine_volume_slider;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
@@ -31,12 +31,12 @@
 #X connect 6 0 0 0;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 610 354 pd volume FM;
-#N canvas 56 378 616 414 volume 0;
+#N canvas 1150 310 616 414 volume 0;
 #X obj 121 161 / 127;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
 #X obj 121 298 s noise_volume;
-#X obj 278 60 r noise_volume_knob;
+#X obj 278 60 r noise_volume_slider;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -85,17 +85,17 @@ empty 0 -8 0 10 -204786 -1 -1 2.58586 256;
 empty 0 -8 0 10 -262130 -1 -1 102.222 256;
 #X text 14 14 Carrier Frequency;
 #X text 166 14 Beat Frequency;
-#X obj 347 89 hsl 100 20 0 100 0 1 sine_volume_knob empty empty -2
--8 0 10 -228856 -1 -1 8800 1;
+#X obj 347 89 hsl 100 20 0 100 0 1 sine_volume_slider sine_volume_knob
+empty -2 -8 0 10 -228856 -1 -1 7816 1;
 #X obj 347 188 hsl 100 20 0 100 0 1 FM_volume_knob FM_volume_knob empty
--2 -8 0 10 -228856 -1 -1 400 1;
+-2 -8 0 10 -228856 -1 -1 1500 1;
 #X text 350 176 FM Volume;
 #X obj 507 242 bng 30 250 50 0 \$0-nextview1 empty next 4 15 0 10 -204800
 -33289 -1;
 #X obj 762 306 nbx 4 20 -1e+37 1e+37 0 1 empty sine_volume_knob empty
-0 -8 0 10 -167479 -1 -1 88.8889 256;
+0 -8 0 10 -167479 -1 -1 84 256;
 #X obj 765 366 nbx 4 20 -1e+37 1e+37 0 1 empty FM_volume_knob empty
-0 -8 0 10 -167479 -1 -1 4.0404 256;
+0 -8 0 10 -167479 -1 -1 15.1515 256;
 #X obj 498 98 nbx 4 20 -1e+37 1e+37 0 1 empty master_volume_knob empty
 0 -8 0 10 -167479 -1 -1 83.5443 256;
 #X obj -1 280 cnv 16 550 280 empty empty empty 20 12 0 14 -262057 -66577
@@ -226,7 +226,7 @@ empty 0 -8 0 10 -167479 -1 -1 95.4545 256;
 #X obj 334 281 cnv 15 215 220 empty empty empty 24 15 0 18 -191407
 -66577 0;
 #X obj 359 350 vsl 20 80 0 140 0 1 noise_cutoff_knob empty empty 0
--9 0 10 -228856 -1 -1 4000 1;
+-9 0 10 -228856 -1 -1 7200 1;
 #X obj 430 350 vsl 20 80 0 120 0 1 noise_resonance_knob empty empty
 0 -9 0 10 -228856 -1 -1 3600 1;
 #X obj 417 315 nbx 4 20 -1e+37 1e+37 0 0 noise_resonance noise_resonance_knob
@@ -234,7 +234,7 @@ empty 0 -8 0 10 -167479 -1 -1 54.6835 256;
 #X obj 485 315 nbx 4 20 -1e+37 1e+37 0 0 noise_panning noise_panning_knob
 empty 0 -8 0 10 -167479 -1 -1 104.81 256;
 #X obj 346 315 nbx 4 20 -1e+37 1e+37 0 0 noise_cutoff noise_cutoff_knob
-empty 0 -8 0 10 -167479 -1 -1 70.8861 256;
+empty 0 -8 0 10 -167479 -1 -1 127.595 256;
 #X obj 500 350 vsl 20 80 0 120 0 1 noise_panning_knob empty empty 0
 -9 0 10 -228856 -1 -1 6900 1;
 #X text 403 436 resonance;
@@ -242,9 +242,9 @@ empty 0 -8 0 10 -167479 -1 -1 70.8861 256;
 #X text 486 436 pan fx;
 #X obj 274 501 cnv 15 179 60 empty empty empty 24 15 0 18 -260097 -66577
 0;
-#X obj 348 470 hsl 100 20 0 60 0 0 noise_volume_knob noise_volume_knob
+#X obj 348 470 hsl 100 20 0 60 0 0 noise_volume_slider noise_volume_knob
 empty -2 -8 0 10 -228856 -1 -1 0 1;
-#X obj 761 424 nbx 4 20 -1e+37 1e+37 0 0 noise_volume_knob noise_volume_knob
+#X obj 761 424 nbx 4 20 -1e+37 1e+37 0 0 noise_volume_slider noise_volume_slider
 empty 0 -8 0 10 -167479 -1 -1 0 256;
 #X obj -1 1122 cnv 16 550 280 {empty} {empty} {empty} 20 12 0 14 -262057
 -66577 0;
@@ -781,26 +781,26 @@ freq -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 19 1207 hsl 70 15 0 10 0 0 vibrato_left_amount vibrato_left_amount_knob
 amount -2 -8 0 10 -262144 -1 -1 0 1;
 #X text 107 1191 L;
-#N canvas 841 122 616 414 volume 0;
+#N canvas 1224 73 616 414 volume 0;
 #X obj 121 188 pack 0 50;
 #X obj 137 231 line;
-#X obj 278 60 r noise_brown_volume_knob;
 #X obj 121 161 / 1270;
 #X obj 121 298 s noise_brown_volume;
+#X obj 278 60 r noise_brown_volume_slider;
 #X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 0 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 4 0 2 0;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 607 466 pd volume brown noise;
-#X obj 316 516 hsl 100 20 0 125 0 0 noise_brown_volume_knob noise_brown_volume_knob
+#X obj 316 516 hsl 100 20 0 125 0 0 noise_brown_volume_slider noise_brown_volume_knob
 empty -2 -8 0 10 -261682 -1 -1 0 1;
 #X text 308 544 Brown Noise Volume;
 #X text 406 287 White Noise;
 #X obj 347 132 hsl 100 20 0 100 0 1 sine_subbass_volume_knob sine_subbass_volume_knob
-empty -2 -8 0 10 -228856 -1 -1 3200 1;
+empty -2 -8 0 10 -228856 -1 -1 5900 1;
 #X obj 1042 310 nbx 4 20 -1e+37 1e+37 0 1 empty sine_subbass_volume_knob
-empty 0 -8 0 10 -167479 -1 -1 32.3232 256;
+empty 0 -8 0 10 -167479 -1 -1 59.596 256;
 #N canvas 1009 134 603 417 volume 0;
 #X obj 137 231 line;
 #X obj 121 13 loadbang;
@@ -820,8 +820,8 @@ empty 0 -8 0 10 -167479 -1 -1 32.3232 256;
 #X coords 0 -1 1 1 140 40 1 100 100;
 #X restore 870 300 pd volume subbass sine;
 #X text 349 120 Sine Subbass Vol;
-#X obj 767 475 nbx 4 20 -1e+37 1e+37 0 0 noise_brown_volume_knob noise_brown_volume_knob
-empty 0 -8 0 10 -167479 -1 -1 0 256;
+#X obj 767 475 nbx 4 20 -1e+37 1e+37 0 0 noise_brown_volume_slider
+noise_brown_volume_slider empty 0 -8 0 10 -167479 -1 -1 0 256;
 #X text 463 478 Noise Vol;
 #X obj 496 122 vsl 20 80 0 110 0 1 master_volume_knob master_volume-vsl
 empty 0 -9 0 10 -232576 -1 -1 6077 1;
@@ -836,8 +836,8 @@ empty 0 -9 0 10 -232576 -1 -1 6077 1;
 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 12 479 tgl 15 0 normalsignal_switch normalsignal_switch audio_signal
 17 7 0 10 -262144 -1 -1 1 1;
-#X obj 196 479 hsl 50 15 0 32 0 0 bitcrusher_val empty empty -2 -8
-0 10 -262144 -1 -1 0 1;
-#X obj 256 487 nbx 5 14 -1e+37 1e+37 0 0 empty bitcrusher_val empty
-0 -8 0 10 -262144 -1 -1 4 256;
+#X obj 196 479 hsl 50 15 0 32 0 0 bitcrusher_val bitcrusher_val empty
+-2 -8 0 10 -262144 -1 -1 612 1;
+#X obj 256 487 nbx 5 14 -1e+37 1e+37 0 0 bitcrusher_val bitcrusher_val
+empty 0 -8 0 10 -262144 -1 -1 4 256;
 #X coords 0 0 1 1 85 60 0;
