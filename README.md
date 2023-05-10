@@ -15,6 +15,7 @@ Binaural Beats are fun! They can create hypnotic drones or high frequencies madn
  * https://clyp.it/ufkzshog
  * https://clyp.it/b4evitno
  * https://soundcloud.com/memento-somniare/binaural-drone-2023-02-21
+ * https://soundcloud.com/memento-somniare/binaural-bitcrusher-2023-05-10
 
 ## Usage 
 
@@ -25,7 +26,7 @@ It works with:
 
 Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
 
- * droidparty_main.pd is the main interface, with some presets 
+ * droidparty_main.pd is the main interface, with some presets (works for both android and desktop)
  * extra.pd has some demo sequences and extra engines
  * binauralsynth.pd is the engine itself
  * you can find an example of a full "song" in the demos/sable folder (sable_test.pd is newer and reuses the synth instead of copying it in its patch, but this version sounds less good at the moment)
@@ -43,6 +44,9 @@ In addition to the classic, "traditional" Sine wave, you can also add, by increa
  * a white noise with some filters to make it less harsh. Put cut off to 140, resonance & pan fx to 0 to get the original sound
  * a brown noise (which sounds lower and deeper)
  * a drum beat (kick)
+
+
+There is a bitcrusher for extra noise effects!
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
 
