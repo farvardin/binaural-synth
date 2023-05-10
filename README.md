@@ -1,12 +1,12 @@
 
 
-# Binaural Synth 
+# BIN-8 : Binaural Synth 
 
 This [Pure Data](https://puredata.info/) sound generator is aimed at creating [Binaural Beats](https://en.wikipedia.org/wiki/Binaural_beats).
 
 A beat is an interference pattern between two sounds of slightly different frequencies, perceived as a periodic variation in volume whose rate is the difference of the two frequencies *(wikipedia)*. 
 
-Some believe it might help focusing, or induce meditative states. We won't discuss here the scientific validations or refutals.
+Some believe it might help focusing, distract from outside noises, or induce meditative states. We won't discuss here the scientific validations or refutals.
 
 Binaural Beats are fun! They can create hypnotic drones or high frequencies madness! So let's create some with this simple synth.
 
@@ -36,12 +36,12 @@ You can change the base frequency (called carrier frequency), and the beat frequ
 
 In addition to the classic, "traditional" Sine wave, you can also add, by increasing their volume:
 
- * a Sine wave sub bass, which follows the main Sine frequency (one octave lower)
+ * a Sine wave sub bass, which follows the main Sine frequency, one octave lower
  * a FM generator, driven by a few parameters (including the modulation frequency, mod depth, and FM wave).
  * a phaser (sawtooth wave) generator 
  * a square generator
- * a white noise
- * a brown noise
+ * a white noise with some filters to make it less harsh. Put cut off to 140, resonance & pan fx to 0 to get the original sound
+ * a brown noise (which sounds lower and deeper)
  * a drum beat (kick)
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
@@ -57,7 +57,7 @@ You can use the binaural-synth with the pd-pulp VST, but it's not working correc
 
  * There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty](http://www.droidparty.net/) app. It should also work with [PdParty on iOS](https://github.com/danomatika/PdParty).
  
-Just get the binaural.zip file found in the release tab and put the extracted content (folder "binaural") into /storage/emulated/0/Android/data/cx.mccormick.pddroidparty/files on your Android device.
+Just get the binaural.zip file found in the release tab and put the extracted content (folder "binaural") into /storage/emulated/0/Android/data/cx.mccormick.pddroidparty/files on your Android device. On some older devices, you might need to put it into a PdDroidParty folder at the root.
 
 ![](binaural_screenshot_android.jpg)
 

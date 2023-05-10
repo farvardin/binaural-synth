@@ -1,4 +1,4 @@
-#N canvas 359 118 1168 751 10;
+#N canvas 1343 131 1168 751 10;
 #X msg 108 144 C;
 #X msg 109 190 66;
 #X msg 174 190 74.25;
@@ -28,13 +28,13 @@
 #X obj 314 312 *;
 #X floatatom 577 258 5 0 0 0 - - - 0;
 #X msg 650 191 0.5;
-#X obj 599 38 loadbang;
+#X obj 598 47 loadbang;
 #X msg 695 191 1;
 #X msg 735 191 2;
 #X text 695 229 octave;
 #X obj 64 98 r key-C;
 #X obj 174 92 r key-D;
-#X obj 683 60 r key-octave-1;
+#X obj 685 42 r key-octave-1;
 #X obj 782 93 r key-octave-2;
 #X obj 807 139 r key-octave-3;
 #X obj 202 29 r key-Ds;
@@ -54,8 +54,8 @@
 #X obj 314 462 *;
 #X floatatom 373 394 5 0 0 0 - - - 0;
 #X obj 424 362 / 440;
-#X msg 670 374 440;
-#X msg 732 378 432;
+#X msg 718 375 440;
+#X msg 656 388 432;
 #X obj 424 323 r tuning;
 #X obj 714 430 s tuning;
 #X msg 778 191 4;
@@ -90,6 +90,7 @@
 #X connect 27 0 26 1;
 #X connect 28 0 27 0;
 #X connect 29 0 28 0;
+#X connect 29 0 56 0;
 #X connect 30 0 27 0;
 #X connect 31 0 27 0;
 #X connect 33 0 0 0;
