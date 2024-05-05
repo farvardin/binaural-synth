@@ -35,7 +35,7 @@ Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can expl
 
 You can change the base frequency (called carrier frequency), and the beat frequency. The beat frequency will split accross the beat frequency value (if your carrier frequency is 100 Hz, and beat frequency is 6 Hz, the carrier frequency will be 97 Hz on the left and 103 Hz on the right panning.
 
-In addition to the classic, "traditional" Sine wave, you can also add, by increasing their volume:
+In addition to the classic, "traditional" Sine wave, you can also add, by increasing their main volume:
 
  * a Sine wave sub bass, which follows the main Sine frequency, one octave lower
  * a FM generator, driven by a few parameters (including the modulation frequency, mod depth, and FM wave).
@@ -46,7 +46,7 @@ In addition to the classic, "traditional" Sine wave, you can also add, by increa
  * a drum beat (kick)
 
 
-There is a bitcrusher for extra noise effects!
+There is also a bitcrusher for extra noise effects!
 
 If you connect a MIDI keyboard, you should be able to play the frequencies with the keys! (monophonic)
 
@@ -59,7 +59,7 @@ You can use the binaural-synth with the pd-pulp VST, but it's not working correc
 
 ### Android and iOS 
 
- * There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty](http://www.droidparty.net/) app. It should also work with [PdParty on iOS](https://github.com/danomatika/PdParty).
+ * There is a droidparty_main.pd which you can used as a standalone Pd app, or on Android with the [PdDroidParty](https://droidparty.net/) app. It should also work with [PdParty on iOS](https://github.com/danomatika/PdParty).
  
 Just get the binaural.zip file found in the release tab and put the extracted content (folder "binaural") into /storage/emulated/0/Android/data/cx.mccormick.pddroidparty/files on your Android device. On some older devices, you might need to put it into a PdDroidParty folder at the root.
 
@@ -74,6 +74,12 @@ For having other drone / noise PureData patches, have a look at those projects:
 
 - https://github.com/farvardin/nullpainter_drone
 - https://github.com/farvardin/LIRA-8/
+
+
+## TODO
+
+- integrate it with libpd? https://github.com/libpd/libpd
+
 
 
 ## Licence 
