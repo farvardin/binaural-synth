@@ -1,7 +1,7 @@
-#N canvas 82 98 1256 936 10;
+#N canvas 166 79 1145 896 10;
 #X obj 599 -8 cnv 15 277 900 empty empty empty 46 13 0 14 #9cd080 #404040
 0;
-#N canvas 127 87 877 871 output 0;
+#N canvas 1293 82 877 871 output 0;
 #X obj 353 490 t b;
 #X obj 353 437 f;
 #X obj 353 515 f;
@@ -21,7 +21,7 @@
 #X text 104 491 if true convert to bang -->;
 #X text 183 99 <-- convert from dB to linear units;
 #X floatatom 323 219 3 0 100 0 dB - - 0;
-#X obj 350 240 bng 15 250 50 0 empty empty mute -38 7 0 12 #fcfcfc
+#X obj 350 240 bng 15 250 50 0 empty s-dsp mute -38 7 0 12 #fcfcfc
 #000000 #000000;
 #X text 191 125 <-- make a ramp to avoid clicks or zipper noise;
 #X obj 148 170 inlet~;
@@ -306,7 +306,7 @@ patch.;
 #X connect 7 1 4 1;
 #X restore 447 22 pd midi_input;
 #X obj 890 180 s Beat_Frequency_final;
-#N canvas 442 146 834 667 initialise 1;
+#N canvas 442 146 834 667 initialise 0;
 #X obj 406 -152 metro;
 #X floatatom 416 -183 5 0 0 0 - - - 0;
 #X obj 379 -164 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -945,6 +945,15 @@ patch.;
 #X obj 372 545 hradio 15 1 0 2 empty normalsignal_switch empty 0 -8
 0 10 #fcfcfc #000000 #000000 0;
 #X text 372 526 normal signal;
+#X obj 411 765 cputime;
+#X obj 411 665 loadbang;
+#X obj 411 723 metro 1000;
+#X obj 411 744 t b b;
+#X obj 411 807 * 0.1;
+#X obj 411 786 int;
+#X msg 411 702 1;
+#X obj 411 828 s r-cpu;
+#X obj 500 693 s r-dsp;
 #X connect 5 0 14 0;
 #X connect 6 0 34 0;
 #X connect 14 0 43 0;
@@ -983,4 +992,13 @@ patch.;
 #X connect 85 0 1 1;
 #X connect 86 0 84 1;
 #X connect 86 0 85 1;
+#X connect 88 0 93 0;
+#X connect 89 0 94 0;
+#X connect 89 0 96 0;
+#X connect 90 0 91 0;
+#X connect 91 0 88 0;
+#X connect 91 1 88 1;
+#X connect 92 0 95 0;
+#X connect 93 0 92 0;
+#X connect 94 0 90 0;
 #X coords 0 0 1 1 280 750 0;
