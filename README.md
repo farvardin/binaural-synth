@@ -12,17 +12,19 @@ Binaural Beats are fun! They can create hypnotic drones or high frequencies madn
 
 ## What does it sound like? 
 
- * https://clyp.it/ufkzshog
- * https://clyp.it/b4evitno
  * https://soundcloud.com/memento-somniare/binaural-drone-2023-02-21
  * https://soundcloud.com/memento-somniare/binaural-bitcrusher-2023-05-10
-
+ * https://soundcloud.com/user-925340912/binaural-synth_test2
+ * ~~https://clyp.it/ufkzshog~~
+ * ~~https://clyp.it/b4evitno~~
+ 
 ## Usage 
 
 It works with:
 
  * [Pure Data (Pd) vanilla](https://puredata.info) 
  * [Purr Data](https://agraef.github.io/purr-data/) (a fork based on [Pd-L2Ork](http://l2ork.music.vt.edu/main/make-your-own-l2ork/software/)), which is itself based on the now obsolete Pd Extended.
+ * [PlugData](https://plugdata.org/), and other similar derivatives.
 
 Just start Pd or Purr-Data, and load the droidparty_main.pd sketch. You can explore the inside of the synth by right-clicking the Binaural Synth and selecting "Open", or by loading the binauralsynth.pd sketch.
 
